@@ -8,7 +8,7 @@
     },
     "fr": {
       "added": [
-        "Modal de configuration du Background : le pad de preview affiche maintenant exactement le même rendu que la vue Global du Multi XYZ — image avec ratio 1:1 préservé (letterboxing avec bandes noires au lieu d'être étirée), pinch zoom + pan à 2 doigts + double-tap reset. Le modal de calibration 2 points bénéficie du même rendu. Ce que tu calibres correspond à ce que tu vois ensuite en utilisation",
+        "[TEST MARKER] Modal de configuration du Background : le pad de preview affiche maintenant exactement le même rendu que la vue Global du Multi XYZ — image avec ratio 1:1 préservé (letterboxing avec bandes noires au lieu d'être étirée), pinch zoom + pan à 2 doigts + double-tap reset. Le modal de calibration 2 points bénéficie du même rendu. Ce que tu calibres correspond à ce que tu vois ensuite en utilisation",
         "Les automations Multi XYZ suivent maintenant la control zone du channel auquel elles s'appliquent. Trois règles nouvelles : (1) tu peux créer une automation Multi XYZ uniquement sur un channel affecté à une control zone (bouton de création désactivé avec tooltip explicatif sinon) ; (2) le pad d'édition affiche le crop de la zone du channel (XYZ rectangulaire ou AED circulaire) plutôt que la geometry globale ; (3) quand tu réaffectes un channel à une autre zone, un popup te propose d'adapter les automations liées (transformer, garder en absolu, ou annuler). La réaffectation + transformation est undoable en un seul Cmd+Z. Les automations legacy hors-zone sont conservées et marquées comme orphan (banner + lecture seule) — affecte leur channel à une zone pour les éditer"
       ]
     }
