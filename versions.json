@@ -1,0 +1,15 @@
+{
+  "latest": "0.7.30-beta",
+  "minSupported": "0.7.0-beta",
+  "channels": {
+    "beta": "0.7.30-beta"
+  },
+  "stores": {
+    "macos": "TBD",
+    "windows": "TBD",
+    "ios": "TBD",
+    "android": "TBD",
+    "linux": "TBD"
+  },
+  "releaseDate": "2026-05-17"
+}

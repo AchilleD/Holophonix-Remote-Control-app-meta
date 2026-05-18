@@ -1,0 +1,632 @@
+{
+  "0.7.30": {
+    "en": {
+      "added": [
+        "Background config modal: the preview pad now matches the Global view of the Multi XYZ exactly — image preserves its 1:1 ratio (letterboxing with black bands instead of being stretched), pinch zoom + 2-finger pan + double-tap reset. The 2-point calibration modal benefits from the same rendering. What you calibrate is what you see next in usage",
+        "Multi XYZ automations now follow the control zone of their channel. Three new rules: (1) you can only create a Multi XYZ automation on a channel assigned to a control zone (create button disabled with explanatory tooltip otherwise); (2) the edit pad displays the crop of the channel's zone (XYZ rectangular or AED circular) rather than the global geometry; (3) when you reassign a channel to a different zone, a popup proposes to adapt the linked automations (transform, keep absolute, or cancel). Reassign + transform is undoable in a single Cmd+Z. Legacy out-of-zone automations are preserved and marked as orphan (banner + read-only) — assign their channel to a zone to edit them"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Modal de configuration du Background : le pad de preview affiche maintenant exactement le même rendu que la vue Global du Multi XYZ — image avec ratio 1:1 préservé (letterboxing avec bandes noires au lieu d'être étirée), pinch zoom + pan à 2 doigts + double-tap reset. Le modal de calibration 2 points bénéficie du même rendu. Ce que tu calibres correspond à ce que tu vois ensuite en utilisation",
+        "Les automations Multi XYZ suivent maintenant la control zone du channel auquel elles s'appliquent. Trois règles nouvelles : (1) tu peux créer une automation Multi XYZ uniquement sur un channel affecté à une control zone (bouton de création désactivé avec tooltip explicatif sinon) ; (2) le pad d'édition affiche le crop de la zone du channel (XYZ rectangulaire ou AED circulaire) plutôt que la geometry globale ; (3) quand tu réaffectes un channel à une autre zone, un popup te propose d'adapter les automations liées (transformer, garder en absolu, ou annuler). La réaffectation + transformation est undoable en un seul Cmd+Z. Les automations legacy hors-zone sont conservées et marquées comme orphan (banner + lecture seule) — affecte leur channel à une zone pour les éditer"
+      ]
+    }
+  },
+  "0.7.29": {
+    "en": {
+      "added": [
+        "Multi XYZ Global view: the background image now preserves its 1:1 aspect ratio (letterboxing with black bands) instead of being stretched to fill the pad — matches what Holophonix displays. Pinch with 2 fingers to zoom, drag with 2 fingers (or Alt/Cmd-drag on desktop) to pan, double-tap to reset",
+        "Multi XYZ virtual world canvas: zoom out far beyond the stage geometry (up to ~5× extent) to navigate freely. Points, labels and icons stay at constant pixel size at any zoom level; grid lines stay readable when dezooming",
+        "Auto-rescale of cue positions on reference change: when you swap the background image, change the drawing length / center, or move / resize a control zone, the app now asks if you want to rescale the affected cue positions (3 choices: Yes transform / No keep absolute / Cancel). For control zones, only sources assigned to that zone are affected. One Cmd+Z undoes both the reference change and the rescale in a single step"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Vue Global du Multi XYZ : l'image de fond préserve maintenant son ratio 1:1 (letterboxing avec bandes noires) au lieu d'être étirée pour remplir le pad — cohérent avec ce que Holophonix affiche. Pinch 2 doigts pour zoomer, drag 2 doigts (ou Alt/Cmd-drag sur desktop) pour paner, double-tap pour reset",
+        "Canvas virtuel étendu en Multi XYZ : tu peux dézoomer bien au-delà de la stage geometry (~5× extent) pour naviguer librement. Les points, labels et icônes gardent une taille pixel constante à n'importe quel zoom ; la grille reste lisible en dézoom",
+        "Auto-rescale des positions de cue au changement de référentiel : quand tu changes l'image de fond, modifies drawing length / center, ou déplaces / redimensionnes une control zone, l'app te propose désormais de rescaler les positions affectées (3 choix : Oui transformer / Non garder en absolu / Annuler). Pour les control zones, seules les sources affectées à cette zone sont impactées. Un seul Cmd+Z annule à la fois le changement de référentiel et le rescale"
+      ]
+    }
+  },
+  "0.7.28": {
+    "en": {
+      "added": [
+        "Multi-select cues in the Cues screen (edit mode): Cmd/Ctrl-click to toggle, Shift-click to extend a range, Cmd+A to select all, Esc to clear. With 2+ cues selected, a bulk header appears with grouped actions: Delete, Duplicate, categorized Paste, Color, Icon, Description, Trigger toggle, Lock, Recall safe, Reorder by dragging a block (animated), Move to position. Bulk-link automations / OSC / MIDI to multiple cues at once. Locked cues are silently skipped (with a recap notification); the Delete button is disabled when every selected cue is locked"
+      ],
+      "fixed": [
+        "PostHog observability: the \"connection mode\" dashboard dimension now reports standalone / server / client correctly (it used to stay stuck on \"unknown\" because the default standalone boot did not trigger a refresh). Sentry crash reporting unaffected",
+        "What's New popup now follows the active app locale (Settings → Language). Defaults to English; French is shown when the app is set to French"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Sélection multiple de cues dans la cue list (Cues screen, edit mode) : Cmd/Ctrl-click pour toggle, Shift-click pour étendre un range, Cmd+A pour tout sélectionner, Esc pour effacer. Quand tu as 2 cues ou plus sélectionnées, un header apparaît avec les actions bulk : Delete, Duplicate, Paste catégorisé, Color, Icon, Description, Trigger toggle, Lock, Recall safe, Reorder par drag d'un bloc (animation), Move to position. Cross-link aussi des automations / OSC / MIDI à plusieurs cues d'un coup. Cues lockées skip silencieusement (notif récap) ; bouton Delete désactivé si toutes les cues sélectionnées sont lockées"
+      ],
+      "fixed": [
+        "PostHog : la dimension \"connection mode\" du dashboard est désormais correctement remontée comme standalone / server / client (avant elle restait bloquée sur \"unknown\" parce que le boot par défaut en standalone ne déclenchait pas de refresh). Sentry et observabilité côté serveur inchangés",
+        "Le popup What's New suit désormais la langue active de l'app (Settings → Langue). Anglais par défaut ; le français s'affiche quand l'app est en français"
+      ]
+    }
+  },
+  "0.7.27": {
+    "en": {
+      "added": [
+        "Multi XYZ automations: new playback mode toggle per automation. **Tracer-paced** (default, same as before) — the speed % multiplies the speed at which you originally drew the movement. **Time-paced** (new) — fixed configurable duration, the speed % acts as a global duration factor (like Mixer automations). Useful to sync a Multi automation to a known cue duration or fixed tempo, independent of the original drawing speed. The original speed profile is preserved in time-paced mode (fast-then-slow stays fast-then-slow, just compressed/stretched)",
+        "Bug report modal: your message now also reaches the Sentry User Feedback tab in addition to technical Issues (cross-referenced). Easier follow-up on the support side"
+      ],
+      "fixed": [
+        "Automation recording: no more 1-2px visual jump on record start/stop across the 3 tabs (Multi XYZ, Mixer, Control). The red \"rec\" border no longer shifts content",
+        "Multi XYZ automation edit modal: if an automation has waypoints outside the current display range, its trace no longer overflows the \"Path Preview\" area to spill over Direction / Loop / Speed controls"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Automations Multi XYZ : nouveau toggle de mode de lecture par automation. **Tracer-paced** (default, comme avant) — la vitesse % multiplie la vitesse à laquelle tu as tracé le mouvement. **Time-paced** (nouveau) — durée fixe configurable, la vitesse % agit comme un facteur de durée global (comme les automations Mixer). Idéal pour caler une automation Multi sur un cue de durée connue ou un tempo fixe, indépendamment de la vitesse de tracé. Le profil de vitesse du tracé est préservé en Mode B (fast-then-slow reste fast-then-slow, juste compressé/étiré)",
+        "Bug report modal : ton message arrive maintenant aussi dans l'onglet User Feedback de Sentry en plus des Issues techniques (cross-référencé). Plus pratique pour le suivi côté support"
+      ],
+      "fixed": [
+        "Recording d'automation : plus de petit saut visuel (1-2px) au démarrage / arrêt du record sur les 3 onglets (Multi XYZ, Mixer, Control). Le border rouge \"rec\" ne décale plus le contenu",
+        "Modal d'édition d'automation Multi XYZ : si une automation a des waypoints hors du range d'affichage actuel, son tracé ne déborde plus de la zone \"Path Preview\" pour passer par-dessus les contrôles Direction / Loop / Speed"
+      ]
+    }
+  },
+  "0.7.26": {
+    "en": {
+      "fixed": [
+        "Crash report opt-in popup: now shows correctly on first launch (before What's New). Explicit choice required (back / Esc blocked) — you can change later via Settings → Diagnostics",
+        "Removed \"Send test crash\" button from release builds (had no place in a production UI)",
+        "Latent bug: TextEditingController not disposed in the bug report modal"
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Popup d'opt-in pour les rapports de crash : apparaît correctement au premier lancement (avant le What's New). Choix explicite obligatoire (back / Esc bloqués) — tu peux changer plus tard via Settings → Diagnostics",
+        "Suppression du bouton \"Send test crash\" en release (n'avait rien à faire dans une UI prod)",
+        "Bug latent : TextEditingController non disposé dans le bug report modal"
+      ]
+    }
+  },
+  "0.7.25": {
+    "en": {
+      "added": [
+        "Sentry crash reporting (opt-in disabled by default, popup on first launch + toggle in Settings → Diagnostics): when enabled, crashes are reported automatically with the context of recent actions. Privacy-first: project names, user paths and local IPs are anonymized before sending. Available to Achille + Felix only for now",
+        "Bug report modal redesigned: sends via Sentry when active (with the last crash stack trace optionally linked), email fallback when disabled. No more misleading \"logs attached\" promise",
+        "Patches Home triplet as native OS windows: Control Zones, Multi XYZ Patch (+ Glide / Home / All Glide / All Home sub-modals) and Mixer Patch now each open in their own movable / resizable window (behind the Settings → Native Windows flag)",
+        "Cue compare modal: trigger-only cues are now selectable (previously greyed out). New Links section with visual diff + added in green / − removed in red, link order insensitive (two cues linking the same actions in a different order are no longer flagged as different)"
+      ],
+      "fixed": [
+        "Custom MIDI modal in client mode: rows were stuck on tap (Duplicate / Copy / Paste / Save buttons appeared permanently disabled). Selection unblocked, multi-select working"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Crash reporting Sentry (opt-in désactivé par défaut, popup au premier lancement + toggle Settings → Diagnostics) : si tu actives, les crashes sont remontés automatiquement avec le contexte des dernières actions. Privacy-first : noms de projets, chemins user et IPs locales sont anonymisés avant envoi. Disponible Achille + Felix uniquement pour l'instant",
+        "Bug report modal refondu : envoi via Sentry quand actif (avec stack trace du dernier crash optionnellement linké), fallback email si désactivé. Plus de promesse mensongère \"logs attached\"",
+        "Triplet Patches Home en fenêtres natives OS : Control Zones, Multi XYZ Patch (+ sub-modals Glide / Home / All Glide / All Home) et Mixer Patch s'ouvrent maintenant chacun dans leur propre fenêtre déplaçable / redimensionnable (derrière le flag Settings → Native Windows)",
+        "Cue compare modal : tu peux maintenant sélectionner aussi les cues trigger-only (avant grisés). Nouvelle section Links avec diff visuel + ajouté en vert / − retiré en rouge, ordre des links insensible (deux cues qui linkent les mêmes actions dans un ordre différent ne sont plus flaggés comme différents)"
+      ],
+      "fixed": [
+        "Custom MIDI modal en mode client : les rows étaient bloquées au tap (les boutons Duplicate / Copy / Paste / Save apparaissaient désactivés à jamais). Sélection débloquée, multi-select fonctionnel"
+      ]
+    }
+  },
+  "0.7.24": {
+    "en": {
+      "added": [
+        "Cue Duplicate / Copy / Paste: new one-shot Duplicate button creates a complete copy immediately; Copy + Paste 2-step flow with categorized dialog (Positions / Mixer / Links / Metadata × ~20 sub-categories) to mix subsets of parameters across cues. Last selection remembered. Expandable preview deltas. Keyboard shortcuts Cmd+D / Cmd+C / Cmd+V",
+        "Current position indicator on XY/Z/Width automation cards + recording snap magnetism: when you start drag-recording near the current position (< 5% of the pad), the first waypoint snaps automatically (toggle in Settings → General Parameters)"
+      ],
+      "fixed": [
+        "Cue link modals visual consistency (automation / OSC / MIDI): no more layout shift on check/uncheck, automation modal widened so long names no longer truncate, Material ripple removed on OSC/MIDI items",
+        "Position lock modal: the N/M counter no longer shifts the \"Lock all\" / \"Unlock all\" buttons on toggle (tabular figures)",
+        "Cue compare modal: no more shift on check, opaque header, consistent rounded corners",
+        "Memory leak hygiene: ui.Image GPU resource properly disposed when swapping background in Multi XY (latent bug fix)"
+      ]
+    },
+    "fr": {
+      "added": [
+        "Cue Duplicate / Copy / Paste : nouveau bouton Duplicate one-shot crée une copie complète immédiate ; Copy + Paste 2 étapes avec dialog catégorisé (Positions / Mixer / Links / Metadata × ~20 sous-catégories) pour mixer des sous-ensembles de paramètres entre cues. Last selection mémorisée. Preview deltas dépliable. Keyboard shortcuts Cmd+D / Cmd+C / Cmd+V",
+        "Indicateur position courante sur les cards d'automations XY/Z/Width + magnétisme recording snap : si tu commences à drag-record proche de la position actuelle (< 5% pad), le premier waypoint s'aligne automatiquement (toggle Settings → General Parameters)"
+      ],
+      "fixed": [
+        "Cohérence visuelle des modals link cue (automation / OSC / MIDI) : plus de shift de layout au check/uncheck, modal automation élargi pour ne plus tronquer les noms longs, ripple Material retiré sur les items OSC/MIDI",
+        "Position lock modal : compteur N/M ne fait plus shifter les boutons \"Lock all\" / \"Unlock all\" au toggle (tabular figures)",
+        "Cue compare modal : plus de shift au check, header opaque, coins arrondis cohérents",
+        "Memory leak hygiene : ressource GPU ui.Image disposée correctement au swap de background Multi XY (latent bug fix)"
+      ]
+    }
+  },
+  "0.7.23": {
+    "en": {
+      "added": [
+        "Centralized MIDI device management: the MIDI Controller modal becomes the single place for Scan / Connect / Disconnect / Learn (the device section is removed from the Custom MIDI modal). \"Assign controller\" dropdowns filter on connected devices + the previously selected device if it is currently disconnected",
+        "Auto-reassign by name unified: when a MIDI device reconnects with a new OS ID (DevSrvsID on macOS), all mappings + Custom MIDI + Control automations re-bind automatically (previously this only worked for Custom MIDI)",
+        "MIDI device status badges on Custom MIDI rows, Control automation cards, MIDI mapping rows. Non-intrusive pre-launch warning if a device is missing when launching a cue or automation"
+      ],
+      "fixed": [
+        "Server-client mode: after an XY automation finished, dragging the track on the XY pad would oscillate / glitch around the final position. Echo loop between the Holophonix state push and the local drag fixed via a client-side drag guard",
+        "MIDI device auto-reconnect on boot: Custom MIDI / Control automations would no longer fire until a manual disconnect/reconnect via the MIDI Controller modal. The initial scan now propagates correctly to consumer services"
+      ]
+    },
+    "fr": {
+      "added": [
+        "MIDI device management centralisé : le modal MIDI Controller devient l'unique endroit pour Scan/Connect/Disconnect/Learn (la section device est retirée du modal Custom MIDI). Dropdowns \"assigner controller\" filtrés sur devices connectés + ancien sélectionné s'il est déconnecté",
+        "Auto-reassign by name uniformisé : quand un device MIDI se reconnecte avec un nouvel ID OS (DevSrvsID macOS), tous les mappings + Custom MIDI + Control automations se réassignent automatiquement (existait que pour Custom MIDI)",
+        "Badges status MIDI device sur Custom MIDI rows, Control auto cards, MIDI mapping rows. Pre-launch warning non-intrusif si device manquant au lancement d'une cue ou auto"
+      ],
+      "fixed": [
+        "Server-client mode : après qu'une automation XY se termine, drag de la track sur le pad XY oscillait/glitchait autour de la position finale. Echo loop entre Holophonix state push et drag local fixé via drag guard côté client",
+        "MIDI device auto-reconnect au boot : Custom MIDI / Control automations ne fonctionnaient plus tant que disconnect/reconnect manuel pas fait dans le modal MIDI Controller. Le scan initial propage maintenant correctement aux services consumers"
+      ]
+    }
+  },
+  "0.7.22": {
+    "en": {
+      "fixed": [
+        "Server mode automation play: the UI did not refresh visually when starting an automation, even though the data was being sent (you had to restart the Remote to resync). Cause: single-callback antipattern overwritten between UI and WS broadcast. Architectural multi-listener fix",
+        "WS server start: 2-3s freeze with a macOS spinner when starting the server. mDNS registration moved to a fire-and-forget background task — the server now accepts connections immediately, mDNS catches up in the background"
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Server mode automation play : l'UI ne se mettait pas à jour visuellement quand on lançait une automation, alors que les données étaient bien envoyées (devait redémarrer la Remote pour resynchroniser). Cause : antipattern single-callback écrasé entre UI et broadcast WS. Fix architectural multi-listener",
+        "WS server start : freeze 2-3 sec avec spinner macOS au démarrage du serveur. mDNS registration déplacée en fire-and-forget background, le serveur accepte des connexions immédiatement, mDNS prend son temps en arrière-plan"
+      ]
+    }
+  },
+  "0.7.21": {
+    "en": {
+      "added": [
+        "WS automation sync refactor: WS automation actions now route by stable automationId instead of index, fixing race conditions on concurrent multi-client add/remove/rename/reorder. Strict protocol version v=2 with handshake refusal on mismatch (explicit popup on the client)",
+        "Client MIDI mirror minimal: client mode now receives explicit entityActionFailed feedback on lookup miss, midi_learn_state snapshot on welcome connect, macOS deviceId wildcard purge. CRUD UI un-greying tracked in a follow-up story",
+        "Drag-end IPC registry per screen: fixes the clobber between mixer↔multixyz when both screens are mounted simultaneously (IndexedStack / keep-alive)",
+        "Bulk-edit IPC token: Reset all / Paste operations on the detached Dynamics modal now collapse to a single Cmd+Z (instead of 11). Project switch automatically closes any open subwindows"
+      ],
+      "fixed": [
+        "Control automation MIDI/OSC can no longer contaminate the OSC position on a corrupted state (silent fallthrough removed, explicit branches per type)",
+        "\"Convert to Binary\" button removed from Control + Mixer automation cards (became redundant once boolean detection + silent snap-on-apply landed)",
+        "Bus Reverb undo now dispatches OSC to Holophonix (no more app↔processor desync after Cmd+Z)",
+        "18 quick defensive fixes: recall safe header \"fully vs none\" mix, factory MIDI presets validation, deletePointGroup orphan parity, BusReverbModal hide EQ/Dyn buttons null handler"
+      ]
+    }
+  },
+  "0.7.17.1": {
+    "en": {
+      "changed": [
+        "Mixer + Control bool snap UX unified: the \"Boolean Parameter\" confirmation dialog on Mixer mute/solo is replaced by the same hint icon + silent-snap UX as Control bool params. The toggle_on icon overlay on continuous presets warns pre-apply, the post-apply notif mentions Cmd+Z to undo"
+      ]
+    }
+  },
+  "0.7.17": {
+    "en": {
+      "added": [
+        "Control automation curve presets: Apply preset on Control timeline (MIDI / OSC 1-arg) opens a 1D modal — sine, ramp, triangle, square, exponential, s-curve. Range clamped to automation min/max, integer enforcement on MIDI / OSC intArg targets",
+        "Control automation curve presets — XY 2D for OSC 2-args: same Multi XYZ presets (circle, polygon, square, triangle, line, figure8, spiral, random) with axis-asymmetric ranges and stripped spatial units",
+        "Boolean detection: hint Icons.toggle_on overlay on continuous presets (sine/triangle/sawtooth/exponential/sCurve) when target is bool, with silent snap to extremes at apply",
+        "Cmd+Z post-apply notif: the success toast now mentions undo for one-shot recovery"
+      ],
+      "fixed": [
+        "MIDI input fields enforce integer-only entry (digitsOnly + clamp). PitchBend signed UI (-8192..8191) deferred to a follow-up"
+      ]
+    }
+  },
+  "0.7.16": {
+    "en": {
+      "added": [
+        "Control automations — Duplicate with destination picker: pick a different MIDI/OSC target when duplicating a Control automation (cross-type allowed)",
+        "Control automations — Boolean detection: MIDI continuous (max-min == 1) and OSC int (max-min == 1) auto-render as step (toggle) timelines, no interpolation",
+        "Custom MIDI — Library system: factory presets (curated console/DAW mappings) + Save as preset for user-saved Custom MIDI actions, browsable from the editor"
+      ],
+      "fixed": [
+        "Cues screen show mode: NEXT / ON DECK card title, icon, padding and description font now scale with screen height (tablet no longer truncates the description)"
+      ]
+    }
+  },
+  "0.7.15": {
+    "en": {
+      "added": [
+        "Control automations: new tab to automate outgoing MIDI (CC, NRPN, PitchBend, NoteOn/Off, PC, sceneRecall) and OSC (1 or 2 args, int/float/bool) with full keyframe playback + live recording (capture incoming MIDI/OSC into waypoints)",
+        "Recording anti-loop guard: outgoing messages echoed within 200 ms are ignored at the input — record from a controller without feedback corruption",
+        "Cards full-fidelity (timeline for MIDI/OSC-1arg, XY pad for OSC-2args), conflict detection between automations sharing the same target, Stream Deck LCD with MIDI/OSC icons, External OSC /automation/play|stop|record/{id}",
+        "Cue link works cross-type — link Control automations to cues alongside Multi XYZ and Mixer ones"
+      ]
+    }
+  },
+  "0.7.14": {
+    "en": {
+      "added": [
+        "Custom OSC + Custom MIDI: multi-select with cmd/shift-click, plus Duplicate / Copy / Paste header buttons and drag-and-drop reorder",
+        "Multi-edit dialog with ≠ markers for divergent values across the selected items (open via dedicated Edit button)",
+        "Server ↔ Client sync extended to Custom OSC bulk operations (parity with MIDI)"
+      ]
+    }
+  },
+  "0.7.13": {
+    "en": {
+      "added": [
+        "Trigger cue: mark a cue as \"Trigger\" to fire its MIDI/OSC links without applying the snapshot — ideal for triggering QLab/lights/video mid-scene without disturbing the audio state",
+        "Cue list auto-scroll: list scrolls automatically when the current cue moves out of the comfortable [25%, 75%] viewport zone (next AND previous)",
+        "Background modal as native desktop window (Home brick), with dedicated calibration subwindow",
+        "History panel as native desktop window (per-category dedup, transverse 7 screens)"
+      ],
+      "fixed": [
+        "Custom OSC editor: desktop now allows direct keyboard input for int/float arg values (instead of numpad popup)",
+        "Custom OSC + MIDI: \"show as button in strip\" checkbox unchecked by default",
+        "Position lock modal: \"Clear all\" button renamed to \"Unlock all\" for consistency"
+      ]
+    }
+  },
+  "0.7.12": {
+    "en": {
+      "fixed": [
+        "Recall Safe mixer: global toggle (top-left) now propagates to the Sends sub-group — busCount tracked across readers, mutators, and WS handlers (no more phantom flags on non-existent bus slots)"
+      ]
+    }
+  },
+  "0.7.11": {
+    "en": {
+      "fixed": [
+        "Recall Safe: select-all now includes channels that are members of a point group (was silently skipped)",
+        "Recall Safe: D2M and Bus mixer params (gain/mute/sends) now properly protected during cue recall",
+        "MIDI CC/PitchBend feedback cache auto-clears after 200ms (prevents latent echo bug)"
+      ],
+      "added": [
+        "Channel config modals (Add/Delete/Source Group) detachable to native desktop windows"
+      ]
+    }
+  },
+  "0.7.10": {
+    "en": {
+      "fixed": [
+        "MIDI send mute: \"un coup sur 2\" bug fixed — absolute mode now writes on both CC 127 and CC 0 (was forcing toggle regardless of mapping setting)",
+        "Preset change on Holophonix auto-resyncs the Remote (channel list, names, positions, all params)",
+        "WS reconnect refreshes channel cache so new preset data shows up",
+        "Backgrounds preserved — loading a new one keeps the previous ones in the project folder (library behavior)"
+      ],
+      "added": [
+        "Automation recording now works in detached native windows (EQ, Dynamics, Reverb, Bus Reverb, Sends)",
+        "Multixyz modal edits produce proper undo/redo entries (parity with mixer)"
+      ]
+    }
+  },
+  "0.7.9": {
+    "en": {
+      "added": [
+        "Mixer multi-selection: Shift+click range, Cmd/Ctrl+click toggle, grouped fader/mute/solo/lock/monitoring/dim/phase/link with relative delta and composite undo",
+        "Prevent display sleep toggle in Settings > General Parameters (default ON)"
+      ],
+      "fixed": [
+        "MIDI send mutes: bool mappings were created as continuous (curve) instead of toggle — classifier fixed + silent migration of existing mappings",
+        "MIDI reverb toggles: 6 toggles (directMute/directLink/earlyMute/earlyLink/lateMute/lateLink) were stuck ON due to snake_case/camelCase key mismatch",
+        "MIDI echo guard no longer blocks fast consecutive user presses (< 200ms) on bool mixer params and cue transport buttons"
+      ]
+    }
+  },
+  "0.7.8": {
+    "en": {
+      "fixed": [
+        "Client connection lost: detection + reconnect popup (no more silent disconnect)",
+        "Client auto-reconnect after Server restart",
+        "Multi XYZ / Mixer layout preferences preserved across app updates",
+        "Point group barycentre recalculated after cue recall (no more drag jump)",
+        "MIDI mapping editor modal: enlarged to fit toggle fields without scroll",
+        "RecallSafe: removed \"G\" indicator (single-layer model)"
+      ]
+    }
+  },
+  "0.7.7": {
+    "en": {
+      "added": [
+        "Recall Safe 2-layer: Global settings + per-cue Position Lock (sidebar section, modal, 🔒 badge)",
+        "Native desktop windows: Reverb + Reverb EQ modals detachable (macOS/Windows/Linux)",
+        "Client MIDI sync + remote editing via WS (mappings, devices, custom actions)",
+        "Custom MIDI: Reassign banner when device disconnected"
+      ],
+      "fixed": [
+        "MIDI auto-reconnect: rewrites stale device IDs (macOS DevSrvsID)",
+        "Channel lock respected by MIDI and Stream Deck input",
+        "Custom OSC/MIDI links visible on Client + MIDI/OSC triggered on cue recall",
+        "Recall safe blocks MIDI position feedback",
+        "Cue badges sync when a custom action is deleted",
+        "MIDI mapping: all channels available for mixer params (only position filters patch)",
+        "Custom numpad used for all numeric inputs on tablet",
+        "scanDevices at startup: unblocks MIDI sends automatically"
+      ]
+    }
+  },
+  "0.7.6": {
+    "en": {
+      "added": [
+        "Native desktop windows (experimental): EQ and Dynamics modals detachable on macOS/Windows/Linux"
+      ],
+      "fixed": [
+        "Custom OSC/MIDI action links in cues not showing on Client",
+        "Recall safe now properly blocks MIDI position feedback",
+        "Cue badges stay in sync when a custom action is deleted",
+        "MIDI↔OSC sync for all mapped params (sends, gain, mute, EQ, dynamics, reverb)",
+        "Channel lock now respected by MIDI and Stream Deck input",
+        "MIDI mapping: only position filters by Multi XYZ patch (all channels available for mixer params)",
+        "Multi XYZ level bar anchored above the point, tweaked width"
+      ]
+    }
+  },
+  "0.7.5": {
+    "en": {
+      "added": [
+        "Holophonix 2.4 compatibility: 6 stories (icons, dynamics, knee, EQ gainRange, reverb 3-shelf, sourcegroups)",
+        "Reverb extended: 3-shelf EQ on Direct/Early per channel + spread on buses",
+        "Sourcegroups: receive from Holophonix, DCA control, CRUD, monitoring button",
+        "Channel icons synced bi-directionally with Holophonix (13 3D models)"
+      ],
+      "fixed": [
+        "Sourcegroup DCA: mute/solo sent directly (no double-application)",
+        "Monitoring button delta sync fixed (key mismatch)",
+        "25+ deferred fixes: dynamics, security, performance, tests (2671 total)"
+      ]
+    }
+  },
+  "0.7.4": {
+    "en": {
+      "added": [
+        "Recall Safe per-cue: each cue carries its own protected parameters",
+        "New cues inherit recall safe from previous cue",
+        "RecallSafe screen contextual on selected cue"
+      ],
+      "fixed": [
+        "VU-meter: linear release (constant dB/s) — uniform descent like Smaart",
+        "VU-meter: shows -∞ instead of -60 when signal drops to silence",
+        "Audio Dropouts removed from connection status (unreliable WS counter)"
+      ]
+    }
+  },
+  "0.7.3": {
+    "en": {
+      "added": [
+        "VU-meter speed setting: Fast (Peak), Medium (PPM), Slow (VU) in Settings & VU modal",
+        "Persisted per-device, with corrupted-value validation"
+      ]
+    }
+  },
+  "0.7.2": {
+    "en": {
+      "fixed": [
+        "External OSC cue control restored: /cue/go, /cue/go/name, /cue/next, etc. on port 8000",
+        "Regression from WS migration (story 9.6) — UDP listener was removed"
+      ],
+      "added": [
+        "External OSC settings: toggle + port in Connection screen modal",
+        "Auto-retry if port is in use, badge shows actual bound port"
+      ]
+    }
+  },
+  "0.7.1": {
+    "en": {
+      "added": [
+        "Lab Monkey compatibility: Remote detected as QLab via mDNS + OSC TCP",
+        "Cue list, transport, push updates in real-time to Lab Monkey",
+        "Toggle + passcode in Connection screen"
+      ],
+      "fixed": [
+        "CI: platform builds only on release tags (saves GitHub Actions minutes)"
+      ]
+    }
+  },
+  "0.7.0": {
+    "en": {
+      "added": [
+        "Control Zones: dynamic zone tabs, channel filtering, clamp, overlay, CRUD modal, WS sync",
+        "Background sync with Holophonix 2.4: drawing params, venue handlers, image HTTP download/upload",
+        "Calibrate from Scale v2: native image resolution, zoom/pan, device-independent results",
+        "Background rotation 90° CCW matching Holophonix display",
+        "MarqueeText: auto-scrolling long names (cues, channels, VU-meters)",
+        "Zone patch modal, groups config modal"
+      ],
+      "fixed": [
+        "Background aligned with points regardless of pad proportions (PadMapping.fill)",
+        "Layout Multi XYZ now persisted to .hrc (was lost on reinstall)",
+        "MIDI: Pitch Bend calibration range, toggle mode, automation LED feedback",
+        "Home brick drag swap, smooth drag on small zones",
+        "VU-meter modal: visible selection border"
+      ],
+      "changed": [
+        "Stage Geometry removed from Home (derived from background drawing params)",
+        "Zone tabs colored by zone color",
+        "Settings preview with fictive zones and stereo point"
+      ]
+    }
+  },
+  "0.6.19": {
+    "en": {
+      "added": [
+        "VU-meter modal: full metering view with Input/Bus/Output sections",
+        "Pre/post fader toggle, clip indicators, peak reset"
+      ],
+      "fixed": [
+        "Settings screen grid alignment and uniform padding",
+        "WS errors: fixed malformed OSC addresses for singleton channels"
+      ]
+    }
+  },
+  "0.6.18": {
+    "en": {
+      "added": [
+        "Anti-double Go: configurable cooldown (100-2000ms) in Settings > Cues Options",
+        "Version check: warning popup if Holophonix processor version is too old",
+        "All OSC commands now sent via WebSocket (single bidirectional channel)"
+      ],
+      "fixed": [
+        "Icon picker showing blank square instead of icon grid"
+      ]
+    }
+  },
+  "0.6.17": {
+    "en": {
+      "added": [
+        "VU-meters & gain reduction in mixer channel strips (real-time via WebSocket)",
+        "Processor info in connection status: model, version, I/O, sample rate, buffer size, project, preset",
+        "Channel selection sync: selecting a channel in Holophonix selects it in the Remote"
+      ],
+      "fixed": [
+        "Reverb defaults incorrect when creating tracks from Remote (auto-correction applied)",
+        "Snapshot: nested values (cutoff, cluster/gain, air) now parsed correctly"
+      ],
+      "changed": [
+        "Multi XYZ channel strip unified with Mixer — same EQ/dynamics painters, VU-meters, layout",
+        "Channels created with sequential names and automatic position spread"
+      ]
+    }
+  },
+  "0.6.16": {
+    "en": {
+      "added": [
+        "WebSocket Holophonix 2.4: real-time data reception via TCP instead of OSC polling",
+        "Failover: dual WebSocket connections (primary + backup) with transparent switch",
+        "MIDI/Stream Deck: map a button to recall a specific cue directly",
+        "Logs: selectable messages, tap to copy, improved format",
+        "1730+ new automated tests (total: 2202)"
+      ],
+      "fixed": [
+        "Channels not updating after add/remove from Holophonix",
+        "Sequencer: tracks without Z lane not moving on first Go",
+        "Cue links: one failing link no longer blocks the rest",
+        "MIDI link delays now included in sequencer progress bar",
+        "ActionTarget crash on unknown kind (corrupted project files)"
+      ],
+      "changed": [
+        "Connection: instant TCP detection replaces 2-4s OSC timeout",
+        "Removed OSC polling, scan timer, and keepalive (-1200 lines)",
+        "Removed Output Port from connection screen (no longer needed)",
+        "Updated: bonsoir 6, font_awesome 11, ffi 2.2"
+      ]
+    }
+  },
+  "0.6.15": {
+    "en": {
+      "added": [
+        "Lightweight OSC keepalive: ~75% less network traffic in steady state",
+        "212 new tests for project lifecycle, undo/redo, export/import",
+        "hrcVersion field in project format for future migrations"
+      ],
+      "fixed": [
+        "Connection stuck on \"waiting for response\" — timeout now fires correctly",
+        "Double failover canceling itself (backup switch guard)",
+        "Backup active without being configured (ghost backup)",
+        "Connection lost dialog: now auto-dismisses when connection restores",
+        "Connection lost dialog: updates reactively when both processors are lost",
+        "Backup state persisting across sessions (singleton cleanup)",
+        "Server mode now has proper failover logic",
+        "Inverted primary/backup IPs in connection lost popup",
+        "Auto-save project retry limit (prevents infinite loop on persistent errors)",
+        "Atomic file write on macOS/Linux (no more race condition)"
+      ],
+      "changed": [
+        "State architecture simplified: 11 → 8 mixins",
+        "SaveTracker replaces 19 duplicated save state fields",
+        "Extended project switch rollback (more state preserved)"
+      ]
+    }
+  },
+  "0.6.14": {
+    "en": {
+      "added": [
+        "Holophonix Backup Server: dual-send OSC to primary + backup processor",
+        "Auto-failover: transparent switch to backup when primary is lost",
+        "Auto-restore: switch back to primary when it comes back online",
+        "Backup keepalive detection (alive/dead status)",
+        "Backup IP/port configuration in connection screen (side-by-side layout)",
+        "Status bar: BACKUP badge (orange) with wifi icon when running on backup",
+        "Connection lost popup: shows both processor states after failover",
+        "Primary restored popup: confirms switch back to primary",
+        "Backup status in connection screen (connection, target, active indicator)",
+        "Separate recent IPs for primary and backup"
+      ]
+    }
+  },
+  "0.6.12": {
+    "en": {
+      "added": [
+        "Automation progress bar in cue list and cue toolbars (blue, distinct from transition)",
+        "Automation progress ring on GO button when autoload advances to next cue",
+        "Sequencer playhead moves during automation-only playback (no transition needed)",
+        "Transition and automation progress synced to WebSocket clients"
+      ],
+      "fixed": [
+        "Sequencer shows wrong cue pair during transition with autoload (now uses actual transition indices)",
+        "Sequencer stays on current cue during automation playback instead of jumping to next",
+        "Cue toolbar: automation progress bar only shown when displayed cue matches playing cue",
+        "GO button: automation ring only shown when no transition active (avoids redundancy)",
+        "SQ Scene Recall: default scene number set to 1 (minimum valid value)"
+      ],
+      "changed": [
+        "GO button progress ring reserved space permanently (no layout shift)"
+      ]
+    }
+  },
+  "0.6.11": {
+    "en": {
+      "added": [
+        "Scene Recall (A&H SQ) in custom MIDI actions",
+        "Transition progress bar in cue list, mixer & multi XYZ toolbars",
+        "Show mode: LOADED cue card with progress fill",
+        "Stream Deck show mode: auto-switch, timer, position, protected buttons",
+        "Stream Deck brightness control in settings",
+        "\"What's New\" popup on app update + accessible from Help menu and About"
+      ],
+      "fixed": [
+        "WebSocket client connection failure (busReverbParams serialization)",
+        "Cue-linked automations not playing in Standalone mode",
+        "MIDI feedback sent for recall-safe parameters during cue recall",
+        "Transition/automation conflict: automation now has priority",
+        "MIDI auto-reconnect by device name (macOS ID changes)",
+        "MIDI \"Device already connected\" crash report",
+        "Stream Deck+ button rendering (stale HID device path)",
+        "mDNS server browser: spinner and server list",
+        "Recall safe: EQ available for monitoring, column alignment",
+        "Cue list: stable border width (no layout shift on selection)",
+        "Sequencer auto-zoom on transition duration change",
+        "Settings page responsive layout on tablet (3-col threshold raised)"
+      ],
+      "changed": [
+        "Custom MIDI/OSC editor: color picker shown only when button is visible",
+        "Stream Deck select page: channel color on selected button"
+      ]
+    }
+  },
+  "0.6.10": {
+    "en": {
+      "fixed": [
+        "WebSocket client connection (busReverbParams int keys)",
+        "Cue automations in Standalone mode",
+        "MIDI recall-safe feedback",
+        "MIDI device reconnect crash",
+        "Recall safe EQ for monitoring",
+        "mDNS browser spinner"
+      ]
+    }
+  },
+  "0.6.9": {
+    "en": {
+      "added": [
+        "Stream Deck show mode with timer and position indicators",
+        "Stream Deck brightness knob in settings",
+        "Channel color on Stream Deck select page"
+      ],
+      "fixed": [
+        "Stream Deck+ cue transport buttons not rendering",
+        "Autoload button background color"
+      ]
+    }
+  },
+  "0.6.8": {
+    "en": {
+      "fixed": [
+        "Project persistence: save all data before switching",
+        "Load automations on project switch",
+        "Prevent settings cross-contamination between projects",
+        "MIDI mute/solo/bypass: absolute value instead of toggle",
+        "Project list refresh in home screen"
+      ]
+    }
+  }
+}
