@@ -1,4 +1,24 @@
 {
+  "0.7.31": {
+    "en": {
+      "fixed": [
+        "Source groups sync: the Recall Safe \"Source Groups\" tab and the Home \"Groups\" brick now always show the same content as the audio processor. No more ghost groups remaining after a wipe — the three internal representations (canonical map, Multi XYZ mirror, channel list) have been unified into a single source of truth (story 15.18)."
+      ],
+      "changed": [
+        "Behind the scenes: the What's New content (this popup) is now fetched at boot from a public source and cached locally — typos, translations and forgotten entries can now be corrected after release without needing a new app build. The app still ships a fallback bundled with each release, so the popup works offline at first launch (story 14.6).",
+        "Public metadata channel established: the app now reads a public JSON manifest for version availability and release notes, completely separate from the private source repo and store-distributed binaries. Prepares the ground for the upcoming \"Check For Update\" feature (story 14.7)."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Synchronisation des source groups : l'onglet \"Source Groups\" du Recall Safe et la brique \"Groups\" du Home affichent désormais toujours le même contenu que le processeur audio. Plus de groupes fantômes après un nettoyage — les trois représentations internes (map canonique, miroir Multi XYZ, liste de canaux) ont été unifiées en une seule source de vérité (story 15.18)."
+      ],
+      "changed": [
+        "En coulisses : le contenu du popup What's New (celui-ci) est désormais récupéré au boot depuis une source publique et mis en cache localement — typos, traductions et oublis peuvent maintenant être corrigés après une release sans nécessiter un nouveau build d'app. L'app embarque toujours une copie de secours dans chaque release, donc le popup fonctionne offline au premier lancement (story 14.6).",
+        "Mise en place d'un canal public de métadonnées : l'app lit maintenant un JSON manifest public pour la disponibilité des versions et les notes de release, complètement séparé du repo source privé et des binaires distribués via stores. Prépare le terrain pour la prochaine feature \"Check For Update\" (story 14.7)."
+      ]
+    }
+  },
   "0.7.30": {
     "en": {
       "added": [
