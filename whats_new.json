@@ -1,4 +1,22 @@
 {
+  "0.7.99-beta": {
+    "en": {
+      "added": [
+        "TEST RELEASE — Story 14.1 Check For Update modal validation. This entry only exists to exercise the Update Available popup. Click Skip to verify SharedPrefs persistence, Later/✕ to dismiss without skipping, Update to confirm it stays disabled with the \"Coming soon\" label (stores still TBD)."
+      ],
+      "fixed": [
+        "Nothing actually fixed — this is a fake bump."
+      ]
+    },
+    "fr": {
+      "added": [
+        "RELEASE DE TEST — Validation du modal Check For Update (story 14.1). Cette entrée existe uniquement pour exercer le popup Mise à jour disponible. Clic Skip pour vérifier la persistance SharedPrefs, Plus tard/✕ pour fermer sans skip, Update pour confirmer qu'il reste disabled avec le label \"Bientôt sur ...\" (stores toujours TBD)."
+      ],
+      "fixed": [
+        "Rien de fixé en vrai — c'est un faux bump."
+      ]
+    }
+  },
   "0.7.31": {
     "en": {
       "fixed": [
