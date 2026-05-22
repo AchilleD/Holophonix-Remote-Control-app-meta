@@ -1,4 +1,38 @@
 {
+  "0.7.32": {
+    "en": {
+      "added": [
+        "Check for Update now opens a full modal with the new version's release notes and three buttons (Update / Later / Skip this version) instead of a small notification. The app also checks once a day at boot and signals you when an update is available — except in Show mode (no popup during a live show). Skipping a version is remembered until the next one drops (story 14.1).",
+        "Stream Deck is now marked \"(BETA)\" in Settings. The integration is fully functional but its mappings and behaviors may evolve before the v1.0 release — the label sets the right expectation while keeping the feature accessible to power users (story 14.8).",
+        "Privacy Policy and Terms of Service are now bundled inside the app and accessible from Settings → About. They detail exactly what data is collected (only when you opt in to crash reports or product analytics), where it goes, how long it's kept, and your rights under GDPR / CCPA. Anonymous IPs guaranteed — Sentry and PostHog configs were pinned to match the promise (story 14.9).",
+        "OSC remote control of cues extended: external systems (QLab, Lab Monkey, custom OSC scripts) can now use `/cue/go/id <uuid>` to recall by stable UUID, plus `/cue/lock`, `/cue/description`, `/cue/color`, `/cue/trigger-mode` to edit metadata remotely. Show mode now blocks destructive edits over OSC (transport pass-through, editing block) — your live setup stays safe even when external surfaces are connected. New reference doc: `docs/osc-cue-control-reference.md` (story 17.20)."
+      ],
+      "fixed": [
+        "Cue transitions now interpolate from the runtime state at the moment you press GO, not from the source cue's snapshot (industry-standard QLab / EOS pattern). Bug fix: if you tweaked a fader or moved a Multi XYZ point between cue A and cue B, the value used to jump back to A's stored snapshot at t=0 before interpolating — visible bump on the pad and audible OSC spike. Now the transition starts smoothly from wherever you currently are. Workaround for the old behavior: explicit recall of cue A before pressing GO (story 17.21).",
+        "Recall Safe Source Groups tab renamed from \"Srcgrp\" to the full \"Source Groups\" label. Marking a source group as recall-safe now also protects its member channels in every category (Multi XYZ + Mixer + Settings) — previously only the group's own row was protected, members got recalled anyway. UI dim+lock indicator on member cells shows when a parameter is inherited-safe via group (story 17.22).",
+        "Multi XYZ Global view: the background image stays visible after deleting a control zone (was getting wiped out — regression from the recent rendering refactor) (story 18.8).",
+        "Multi XYZ tabs: switching from Global to a Zone tab now renders the zone-cropped background correctly on the first frame — no more squashed-image artifact requiring a tab re-tap (story 18.9).",
+        "Multi XYZ REC: hitting the record button while in Global view now correctly skips channels that are not in a control zone (no orphan automations created silently — invariant from story 18.7 finally enforced at the recording engine level). In-zone channels record normally (story 18.10).",
+        "Multi XYZ automation orphan handling: when a channel is removed from a zone OR deleted, the linked automation now shows a clear, distinct message (\"channel out of zone\" vs \"channel deleted\") and the Reassign dropdown only proposes channels that are currently in a control zone. Auto-recovery: re-assigning the original channel to a zone restores the automation transparently (story 18.11)."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Check for Update ouvre maintenant un modal complet avec les notes de release de la nouvelle version et trois boutons (Mettre à jour / Plus tard / Ignorer cette version) au lieu d'une simple notification. L'app vérifie aussi automatiquement 1 fois par jour au boot et te signale si une mise à jour est dispo — sauf en mode Show (pas de popup pendant un spectacle live). Ignorer une version la mémorise jusqu'à la prochaine (story 14.1).",
+        "Stream Deck est désormais marqué \"(BETA)\" dans Settings. L'intégration est complète et fonctionnelle mais ses mappings et comportements peuvent évoluer avant la v1.0 — le label cadre les attentes tout en gardant la feature accessible aux power users (story 14.8).",
+        "Privacy Policy et Terms of Service sont désormais inclus dans l'app et accessibles depuis Settings → About. Ils détaillent exactement quelles données sont collectées (uniquement si tu actives crash reports ou analytics), où elles vont, combien de temps elles sont conservées, et tes droits RGPD / CCPA. IPs anonymisées garanties — les configs Sentry et PostHog ont été pinnées pour matcher la promesse (story 14.9).",
+        "Contrôle OSC distant des cues étendu : les systèmes externes (QLab, Lab Monkey, scripts OSC custom) peuvent maintenant utiliser `/cue/go/id <uuid>` pour rappeler par UUID stable, plus `/cue/lock`, `/cue/description`, `/cue/color`, `/cue/trigger-mode` pour éditer les métadonnées à distance. Le mode Show bloque les éditions destructives en OSC (transport pass-through, édition bloquée) — ton setup live reste safe même avec des surfaces externes branchées. Nouvelle doc référence : `docs/osc-cue-control-reference.md` (story 17.20)."
+      ],
+      "fixed": [
+        "Les transitions de cues interpolent maintenant depuis l'état actuel au moment du GO, plus depuis la snapshot du cue source (pattern industrie QLab / EOS). Fix : si tu ajustais un fader ou déplaçais un point Multi XYZ entre cue A et cue B, la valeur sautait brutalement à la valeur stockée de A à t=0 avant d'interpoler — saut visible sur le pad et spike OSC audible. Maintenant la transition démarre en douceur depuis l'endroit où tu es. Pour récupérer l'ancien comportement : recall explicite de cue A avant de presser GO (story 17.21).",
+        "Onglet Recall Safe Source Groups renommé de \"Srcgrp\" en \"Source Groups\" (label complet). Marquer un source group recall-safe protège désormais aussi ses channels membres dans toutes les catégories (Multi XYZ + Mixer + Settings) — avant, seule la ligne du groupe lui-même était protégée, les membres étaient rappelés quand même. Indicateur visuel dim+lock sur les cellules membres pour signaler quand un paramètre est protégé via héritage groupe (story 17.22).",
+        "Vue Global du Multi XYZ : l'image de fond reste visible après suppression d'une control zone (avant elle disparaissait — régression du refactor rendering récent) (story 18.8).",
+        "Onglets du Multi XYZ : passer de Global à un onglet Zone affiche désormais le crop background centré sur la zone dès le premier frame — plus d'artefact image tassée nécessitant un re-tap (story 18.9).",
+        "REC du Multi XYZ : presser le bouton record en vue Global skip désormais correctement les channels qui ne sont pas dans une control zone (plus d'automation orphan créée silencieusement — invariant story 18.7 enfin appliqué côté recording engine). Les channels in-zone enregistrent normalement (story 18.10).",
+        "Gestion des automations Multi XYZ orphan : quand un channel est retiré d'une zone OU supprimé, l'automation liée affiche maintenant un message clair et distinct (\"channel hors-zone\" vs \"channel supprimé\") et le dropdown Reassign ne propose que les channels actuellement dans une control zone. Recovery automatique : réaffecter le channel original à une zone restaure l'automation de façon transparente (story 18.11)."
+      ]
+    }
+  },
   "0.7.31": {
     "en": {
       "fixed": [
