@@ -1,4 +1,16 @@
 {
+  "0.7.34": {
+    "en": {
+      "fixed": [
+        "Multi XYZ automation in **Time-paced** mode now plays back at a uniform spatial speed (one position per equal arc-length step over `duration`), instead of replaying the speed irregularities of the original drawing. If you drew the path slowly here and quickly there, playback will now glide smoothly at a constant pace regardless. The companion Z-vs-time card axis was also reparameterized to match the uniform playback duration. Regression fix — this had been corrected once before and came back via a refactor. Anti-regression : new assertion tests on emission intervals so CI catches it if it returns (story 17.25)."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Automation Multi XYZ en mode **Time-paced** : la lecture est maintenant à vitesse spatiale uniforme (un point tous les pas d'arc-length égaux sur la duration), au lieu de rejouer les irrégularités de vitesse du tracé d'origine. Si tu as dessiné lentement à un endroit et vite ailleurs, la lecture glisse désormais à vitesse constante peu importe. L'axe du card Z-vs-time est aussi réparamétré pour matcher la duration uniforme. Fix de régression — ce comportement avait déjà été corrigé une fois et est revenu via un refactor. Anti-régression : nouveaux tests sur les intervalles d'émission pour que CI casse si ça revient (story 17.25)."
+      ]
+    }
+  },
   "0.7.33": {
     "en": {
       "changed": [
