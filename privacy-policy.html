@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Holophonix Remote Control</title>
+  <meta name="robots" content="index, follow">
+  <style>  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5a5a5a;
+    --link: #0066cc;
+    --border: #e0e0e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a1a;
+      --fg: #e0e0e0;
+      --muted: #a0a0a0;
+      --link: #6ab0ff;
+      --border: #333333;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2rem 1.5rem 4rem;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1, h2, h3, h4 { line-height: 1.25; margin-top: 2em; margin-bottom: 0.5em; }
+  h1 { font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.15rem; color: var(--muted); }
+  p, ul, ol { margin: 0 0 1em; }
+  ul, ol { padding-left: 1.5em; }
+  li { margin-bottom: 0.3em; }
+  a { color: var(--link); text-decoration: underline; }
+  a:hover { text-decoration: none; }
+  code {
+    background: var(--border);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  pre { background: var(--border); padding: 1em; border-radius: 6px; overflow-x: auto; }
+  pre code { background: transparent; padding: 0; }
+  blockquote {
+    border-left: 3px solid var(--border);
+    padding-left: 1em;
+    margin: 1em 0;
+    color: var(--muted);
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
+  footer {
+    max-width: 720px;
+    margin: 3em auto 0;
+    padding-top: 1em;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85em;
+    text-align: center;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <main>
+<h1 id="privacy-policy">Privacy Policy</h1>
+<p><em>Last updated: 2026-05-21</em></p>
+<p>This Privacy Policy describes how <strong>Holophonix Remote Control</strong> (the &quot;App&quot;) collects, uses and protects personal data when you install and use it.</p>
+<p>It is written to comply with the EU General Data Protection Regulation (GDPR) and to satisfy a reasonable level of transparency for users located in the United States (CCPA-aligned good practices). The App is intended for professional audio operators (&quot;front-of-house engineers&quot;, &quot;stage managers&quot;), distributed worldwide as a public beta.</p>
+<h2 id="1-data-controller">1. Data controller</h2>
+<p>Holophonix Remote Control is published by <strong>TonLab</strong>, the trading name of <strong>Achille Decoussé</strong> (<em>auto-entrepreneur</em>), registered in France under SIRET <code>10251863600018</code>.</p>
+<ul>
+<li><strong>Contact:</strong> <code>achille.decousse@orange.fr</code></li>
+<li><strong>Jurisdiction:</strong> France</li>
+</ul>
+<p>You can use this email for any question related to this policy or to exercise the rights described in section 7.</p>
+<h2 id="2-data-we-collect">2. Data we collect</h2>
+<p>The App is designed to keep all show-critical data on your device. We only send data outside your device if you have explicitly enabled diagnostics through <em>Settings → Diagnostics → Help improve Holophonix Remote</em>. The opt-in is OFF by default.</p>
+<h3 id="21-local-only-data-never-sent-to-us">2.1 Local-only data (never sent to us)</h3>
+<p>The following data stays on your machine, in the App's project files (<code>.hrc</code>), automation files and local preferences. We never receive it.</p>
+<ul>
+<li>Project names, cue names, automation names, channel names and any other free-text label you type</li>
+<li>Cue snapshots (positions, mixer state, MIDI mappings, custom OSC actions)</li>
+<li>Network configuration (Holophonix IP, backup IP, ports, WebSocket address)</li>
+<li>Background images, channel customization, layout configuration</li>
+<li>Connection mode, MIDI device list, Stream Deck profiles</li>
+</ul>
+<h3 id="22-crash-reports-sentry-opt-in">2.2 Crash reports (Sentry, opt-in)</h3>
+<p>When you enable diagnostics, the App uses <strong>Sentry</strong> to send crash reports so we can detect and fix bugs. Each crash event contains:</p>
+<ul>
+<li>Device type and operating system version (e.g. <code>macOS 15.5</code>, <code>iPad</code>)</li>
+<li>App version and build number (e.g. <code>v0.7.0-beta</code>)</li>
+<li>Crash stack trace, with absolute file paths anonymized (<code>/Users/&lt;name&gt;/...</code> becomes <code>/Users/&lt;redacted&gt;/...</code>)</li>
+<li>A short trail of the last application events (&quot;breadcrumbs&quot;), limited to a fixed list maintained by us: cue recall, cue go, automation play/stop, project switch, connection mode change, connection lost, failover switch, MIDI device change, OSC error, What's New fetch failure</li>
+<li>Bug report text and email if you voluntarily submit one through <em>Settings → Diagnostics → Report a bug</em></li>
+</ul>
+<p>Before any event leaves your device, an automatic filter strips:</p>
+<ul>
+<li>User home paths (<code>/Users/&lt;name&gt;</code> and equivalents on Windows / Linux)</li>
+<li>Local IP addresses (RFC 1918 / CGNAT / APIPA ranges and <code>.local</code> / <code>.lan</code> hostnames)</li>
+<li>Project file names (<code>*.hrc</code> becomes <code>&lt;project&gt;.hrc</code>)</li>
+</ul>
+<p>We never attach free-text identifiers (cue names, project names) to breadcrumb data.</p>
+<p>Note: the bug report free-text field is the only mechanism through which user-typed content can leave your device. If you include identifying information, it will be transmitted as-is and retained for the standard 90 days. You are responsible for the content of bug reports you choose to submit.</p>
+<h3 id="23-anonymous-usage-events-posthog-opt-in">2.3 Anonymous usage events (PostHog, opt-in)</h3>
+<p>When you enable diagnostics, the App also uses <strong>PostHog</strong> to count anonymous usage events. This helps us understand which features are used and prioritize roadmap work. Events sent are limited to the following list, with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.boot</code></td>
+<td>boot time in ms</td>
+</tr>
+<tr>
+<td><code>screen.viewed</code></td>
+<td>screen name (e.g. <code>cues</code>, <code>mixer</code>)</td>
+</tr>
+<tr>
+<td><code>cue.recalled</code></td>
+<td>cue index, total cues, trigger flag</td>
+</tr>
+<tr>
+<td><code>cue.go_pressed</code></td>
+<td>cue index, total cues</td>
+</tr>
+<tr>
+<td><code>cue.created</code></td>
+<td>total cues after creation</td>
+</tr>
+<tr>
+<td><code>automation.played</code></td>
+<td>automation type (xy, mixer, midi, osc)</td>
+</tr>
+<tr>
+<td><code>automation.created</code></td>
+<td>automation type (xy, mixer only)</td>
+</tr>
+<tr>
+<td><code>project.switched</code></td>
+<td>(no name attached)</td>
+</tr>
+<tr>
+<td><code>connection.mode_set</code></td>
+<td>mode (standalone, server, client)</td>
+</tr>
+<tr>
+<td><code>midi.device_connected</code></td>
+<td>total device count</td>
+</tr>
+</tbody>
+</table>
+<p>Every event is also tagged with the following session-wide properties: app version, operating system, current connection mode, Holophonix firmware version (if known). The same privacy filter as Sentry strips paths, IPs, hostnames and project file names before sending.</p>
+<p>We never send user-typed strings (cue names, project names, channel names) as properties.</p>
+<h3 id="24-what-we-never-collect">2.4 What we never collect</h3>
+<ul>
+<li>Names, postal addresses, phone numbers</li>
+<li>Audio content, microphone signals, network packets sent to or from the Holophonix processor</li>
+<li>IP addresses of users (Sentry / PostHog see the request source IP at the network level but we do not store or look at it; both providers are configured EU-cloud)</li>
+<li>Cookies on a website (the App is a native app; the companion documentation site does not use analytics)</li>
+</ul>
+<h3 id="25-show-mode">2.5 Show mode</h3>
+<p>When the App is in <strong>Show mode</strong> (live performance), all PostHog event capture and property updates are suppressed in real time. Crash reporting via Sentry remains active so a crash during a show can still be diagnosed.</p>
+<h2 id="3-legal-basis">3. Legal basis</h2>
+<p>We rely on your explicit consent (GDPR Article 6 (1) (a)) for all opt-in diagnostics. The consent is collected through the first-launch <em>Help improve Holophonix Remote</em> dialog and is revocable at any moment from <em>Settings → Diagnostics</em>.</p>
+<p>Local-only data (section 2.1) never leaves your device, so no legal basis is required.</p>
+<h2 id="4-retention">4. Retention</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crash reports (Sentry)</td>
+<td>90 days (Sentry tenant default)</td>
+</tr>
+<tr>
+<td>Anonymous usage events (PostHog)</td>
+<td>1 year (PostHog tenant default)</td>
+</tr>
+<tr>
+<td>Local files on your device (<code>.hrc</code>, automations, preferences)</td>
+<td>Until you delete them. The App never deletes them on its own.</td>
+</tr>
+</tbody>
+</table>
+<p>After the retention window, Sentry and PostHog automatically purge the events from their servers.</p>
+<h2 id="5-recipients">5. Recipients</h2>
+<ul>
+<li><strong>Sentry GmbH</strong> (Functional Software Ireland Ltd., EU cloud) — crash reports</li>
+<li><strong>PostHog Inc.</strong> (EU cloud region) — anonymous usage events</li>
+<li><strong>App stores</strong> (Apple App Store, Google Play Store, Microsoft Store) — at install / update time, the stores see the standard install metadata they collect from every app. Their handling is governed by their own privacy policies.</li>
+</ul>
+<p>We never sell or share data with advertising networks.</p>
+<h2 id="6-transfers-outside-the-eu">6. Transfers outside the EU</h2>
+<p>None. Sentry and PostHog are configured to use their EU cloud regions. No data is sent to the United States or any other non-EU country through our pipelines.</p>
+<p>If you install the App from a non-EU app store, the store itself may process install metadata in its own jurisdiction — refer to the store's privacy policy.</p>
+<h2 id="7-your-gdpr-rights">7. Your GDPR rights</h2>
+<p>You can exercise the following rights at any time by sending an email to <code>achille.decousse@orange.fr</code>:</p>
+<ul>
+<li><strong>Access</strong> — request a copy of the data we hold linked to your installation (in practice: Sentry / PostHog events tagged with the installation id, which is anonymous)</li>
+<li><strong>Rectification</strong> — request that inaccurate data be corrected</li>
+<li><strong>Erasure</strong> (&quot;right to be forgotten&quot;) — request deletion. Because events are anonymous, we will erase by purging events that match the install id you provide (visible in <em>Settings → Diagnostics → Diagnostics ID</em>)</li>
+<li><strong>Restriction</strong> — request that processing be paused</li>
+<li><strong>Objection</strong> — withdraw consent. You can also disable diagnostics with one tap in <em>Settings → Diagnostics</em>; the toggle takes effect at the next app start</li>
+<li><strong>Portability</strong> — request an export in a machine-readable format</li>
+</ul>
+<p>We will reply within 30 days. If you are not satisfied with our response, you have the right to lodge a complaint with the French data protection authority, the <a href="https://www.cnil.fr/">CNIL</a>.</p>
+<h2 id="8-cookies-and-web-tracking">8. Cookies and web tracking</h2>
+<p>The App is a native application and does not use cookies, web beacons, fingerprinting or any other web tracking technology.</p>
+<h2 id="9-minors">9. Minors</h2>
+<p>The App is intended for adult audio professionals and is not specifically directed at users under 16. We do not knowingly collect data from minors. If you believe a minor has used the App and produced diagnostics events, contact us at <code>achille.decousse@orange.fr</code> and we will purge them.</p>
+<h2 id="10-changes-to-this-policy">10. Changes to this policy</h2>
+<p>The date at the top of this document reflects the last revision. Significant changes are shipped together with new App releases and highlighted in the in-app &quot;What's New&quot; popup.</p>
+<p>Continued use of the App after a revision constitutes acceptance of the new policy.</p>
+
+  </main>
+  <footer>
+    Holophonix Remote Control · Published by TonLab ·
+    <a href="privacy-policy.html">Privacy Policy</a> ·
+    <a href="terms-of-service.html">Terms of Service</a>
+  </footer>
+</body>
+</html>
