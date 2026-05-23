@@ -1,4 +1,24 @@
 {
+  "0.7.33": {
+    "en": {
+      "changed": [
+        "Recall Safe simplified — the group-level Recall Safe introduced in 0.7.32 has been removed entirely. Recall Safe is now strictly per-channel : no more propagation from groups to their members, no more inherited-master indicator on member cells, no group safe UI in Multi XYZ or Mixer. The group-level model added complexity without matching how engineers actually use Recall Safe in the field. If you need to protect several channels at once, lock each channel individually (multi-select still works in the Recall Safe screen). Reverts stories 17.22 + 17.23 (story 17.24)."
+      ],
+      "fixed": [
+        "Privacy Policy and Terms of Service are now visible from Settings → About (links open in-app) and inside the Diagnostics opt-in dialog. The opt-in dialog also lists explicitly every event sent to Sentry and PostHog (5 crash report items + 10 analytics events + 4 super-properties + 3 exclusion categories) — full transparency before you consent. Bigger tap zones on the Privacy / Terms links, scrollable bottom sheet for smaller screens (story 14.12).",
+        "mDNS / Bonjour discovery hardened : when your Mac or server advertises multiple IP addresses (VPN active, multi-interface laptop, IPv6 link-local present), the app now prefers a routable IPv4 address and brackets IPv6 in WebSocket URLs. Avoids occasional connection failures on multi-network setups that previously worked intermittently (story 14.14)."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Recall Safe simplifié — le Recall Safe au niveau des groupes introduit en 0.7.32 a été entièrement retiré. Le Recall Safe est désormais strictement par-channel : plus de propagation groupe → membres, plus d'indicateur master hérité sur les cellules membres, plus d'UI safe sur les groupes en Multi XYZ ou Mixer. Le modèle group-level apportait de la complexité sans matcher l'usage réel des régisseurs en spectacle. Pour protéger plusieurs channels d'un coup, lock chaque channel individuellement (la sélection multiple reste fonctionnelle dans l'écran Recall Safe). Annule les stories 17.22 + 17.23 (story 17.24)."
+      ],
+      "fixed": [
+        "Privacy Policy et Terms of Service sont maintenant accessibles depuis Settings → About (liens qui s'ouvrent dans l'app) et depuis la popup d'opt-in Diagnostics. La popup d'opt-in liste désormais explicitement chaque événement envoyé à Sentry et PostHog (5 items crash reports + 10 events analytics + 4 super-properties + 3 catégories d'exclusions) — transparence complète avant de consentir. Tap zones plus généreuses sur les liens Privacy / Terms, bottom sheet scrollable pour les petits écrans (story 14.12).",
+        "Discovery mDNS / Bonjour durcie : quand ton Mac ou ton serveur annonce plusieurs IPs (VPN actif, laptop multi-interface, IPv6 link-local présente), l'app préfère désormais une IPv4 routable et bracket l'IPv6 dans les URLs WebSocket. Évite les ratés de connexion sur les setups multi-réseaux qui marchaient de façon intermittente avant (story 14.14)."
+      ]
+    }
+  },
   "0.7.32": {
     "en": {
       "added": [
@@ -241,7 +261,7 @@
         "Control automation MIDI/OSC can no longer contaminate the OSC position on a corrupted state (silent fallthrough removed, explicit branches per type)",
         "\"Convert to Binary\" button removed from Control + Mixer automation cards (became redundant once boolean detection + silent snap-on-apply landed)",
         "Bus Reverb undo now dispatches OSC to Holophonix (no more app↔processor desync after Cmd+Z)",
-        "18 quick defensive fixes: recall safe header \"fully vs none\" mix, factory MIDI presets validation, deletePointGroup orphan parity, BusReverbModal hide EQ/Dyn buttons null handler"
+        "18 quick defensive fixes: recall safe header \"fully vs none\" mix, factory MIDI presets validation, deleteSourceGroup orphan parity, BusReverbModal hide EQ/Dyn buttons null handler"
       ]
     }
   },
