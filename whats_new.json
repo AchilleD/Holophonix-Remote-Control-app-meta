@@ -1,4 +1,34 @@
 {
+  "0.7.35": {
+    "en": {
+      "fixed": [
+        "MIDI mapping on a channel position now respects the **control zone bounds** of that channel, not the global stage. MIDI value 0 (pan left) sends the point to the **left edge of the zone** (e.g., x=2 for a zone spanning x=2..4), and 127 to the right edge of the zone. Same for Y, Z, and AED zones. The previous behaviour mapped to the stage globally, which made MIDI surfaces almost unusable when working inside narrow zones. Side-effect : the long-standing cross-axis drift (Y position drifting from MIDI X) is also pinned by a regression test.",
+        "Multi XYZ Control Zones now sync correctly to connected Clients. Two bugs in one wave : (a) the channels patched in a zone on the Server were not showing up Client-side (\"No sources patched in this zone\" message even though the Server had them) ; (b) the zone geometry itself (center, radius, shape, mode) could appear shifted on the Client. Both fixed — Clients now see the exact same zone layout as the Server, with the patched channels correctly listed.",
+        "The \"MIDI controller disconnected\" warning indicator now disappears as soon as you delete all mappings referencing that controller. Previously it persisted indefinitely even after a clean removal. Fixed for both standard MIDI mappings AND Custom MIDI actions.",
+        "Mixer patch loading hardened : if your SharedPreferences contain a corrupted entry for **one** mixer patch type (e.g. tracks JSON is malformed), the other 4 types (stereo / d2m / bus / sourcegroup) are now preserved at their saved state instead of being silently reset to defaults. Each type is loaded in isolation with a labelled warning on failure.",
+        "Project loading hardened against malformed `.hrc` : a `MixerPatch` entry with an invalid schema (e.g. root is a list instead of an object, or stripCount has the wrong type) now throws a clear FormatException instead of silently producing a corrupted empty patch."
+      ],
+      "changed": [
+        "Performance : cue transitions now capture only the parameter keys present in the transition lanes, instead of cloning the full project snapshot at every GO. On large shows with many cues, this reduces heap allocation per transition.",
+        "Performance : bulk channel-zone reassign (Zone Patch modal) now records a single composite undo entry and saves the project once instead of N times (one per channel). Cmd+Z restores the whole batch atomically.",
+        "Under the hood : a thick layer of regression tests landed across the connection layer (Standalone + Server modes), the patch / mixer / control zone surface, the orchestrator T4 dialog branches, and the MIDI mapping path. +201 tests vs 0.7.34. You should see steadier behaviour overall."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Le mapping MIDI sur la position d'un channel respecte désormais les **bornes de sa control zone**, pas le référentiel stage global. MIDI 0 (pan gauche) envoie le point au **bord gauche de la zone** (ex: x=2 pour une zone x=2..4), 127 au bord droit. Idem Y, Z, zones AED. Avant, le mapping prenait la stage globale → surface MIDI quasi-inutilisable dans une zone étroite. Effet de bord : le bug cross-axis (la position Y bougeait en pilotant MIDI X) est verrouillé par un test régression.",
+        "Sync Multi XYZ Control Zones côté Client réparée. Deux bugs d'un coup : (a) les channels patchés dans une zone côté Server n'apparaissaient pas côté Client (message \"No sources patched in this zone\" malgré des channels patchés Server) ; (b) la géométrie de la zone elle-même (center, radius, shape, mode) pouvait apparaître décalée côté Client. Les deux fixés — les Clients voient désormais exactement le même layout que le Server, avec les channels patchés correctement listés.",
+        "L'indicateur d'erreur \"controller MIDI déconnecté\" disparaît maintenant immédiatement quand tu supprimes tous les mappings qui le référencent. Avant, l'indicateur persistait même après un nettoyage propre. Fix pour MIDI standard ET Custom MIDI actions.",
+        "Chargement mixer patch durci : si UNE entrée SharedPreferences mixer patch (sur 5 : tracks / stereo / d2m / bus / sourcegroup) est corrompue, les 4 autres types valides sont désormais préservés au lieu d'être tous reset silencieusement aux defaults. Chaque type est chargé isolément avec un warning labellisé en cas d'échec.",
+        "Chargement de projet `.hrc` durci : un `MixerPatch` au schéma invalide (root list au lieu d'objet, stripCount type erroné) throw désormais une FormatException claire au lieu de produire silencieusement un patch vide corrompu."
+      ],
+      "changed": [
+        "Perf : les transitions de cues ne capturent désormais que les paramètres présents dans les lanes de la transition, au lieu de cloner le snapshot projet complet à chaque GO. Sur les grosses shows avec beaucoup de cues, ça réduit l'allocation heap à chaque transition.",
+        "Perf : bulk reassign channel-zone (Zone Patch modal) produit désormais 1 seul HistoryEntry composite + 1 seul autoSave au lieu de N (un par channel). Cmd+Z annule tout le batch atomiquement.",
+        "En coulisses : grosse vague de tests régression sur la couche connexion (Standalone + Server), la surface patch/mixer/control zones, les branches du dialog orchestrator T4, et le mapping MIDI. +201 tests vs 0.7.34. Comportement global plus stable."
+      ]
+    }
+  },
   "0.7.34": {
     "en": {
       "fixed": [
