@@ -1,4 +1,16 @@
 {
+  "0.7.37": {
+    "en": {
+      "fixed": [
+        "Internal fix : the diagnostics opt-out flag of the analytics SDK was persisted to disk and silently dropped every event for any user who had ever toggled diagnostics OFF and back ON. Even with the in-app toggle showing ON, the SDK stayed opted-out across launches. The init now explicitly re-enables the SDK so the in-app toggle is the single source of truth. No action needed — affected installs recover automatically at this update."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Fix interne : le flag opt-out du SDK diagnostics était persisté à disque et droppait silencieusement tous les events pour tout user qui avait toggle diagnostics OFF puis ON. Même avec le toggle in-app à ON, le SDK restait opt-out d'un lancement à l'autre. L'init force désormais le réenable du SDK pour que le toggle in-app reste la seule source de vérité. Aucune action — les installs concernées récupèrent automatiquement à cette update."
+      ]
+    }
+  },
   "0.7.36": {
     "en": {
       "added": [
