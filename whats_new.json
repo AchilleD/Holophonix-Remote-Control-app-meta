@@ -1,4 +1,32 @@
 {
+  "0.7.36": {
+    "en": {
+      "added": [
+        "Source groups can now be **activated / deactivated** from the Home brick → group settings, in sync with Holophonix Designer. When you deactivate a group, the group point disappears from Multi XYZ (members stay visible and individually draggable), the bus row is hidden from the Mixer, and parameter links between master and members are cut — just like in Designer. Bidirectional sync : toggle in Designer and HRC reflects the state instantly. The toggle is available as a MIDI and Stream Deck mapping target."
+      ],
+      "fixed": [
+        "MIDI feedback on **cue recall** now respects the **control zone bounds** of each mapped channel (previously the feedback was normalized against the full stage even when the channel was inside a zone — pots and faders ended up at the wrong physical position on cue recall when working inside narrow zones). Companion fix to the 0.7.35 control-zone MIDI input fix.",
+        "MIDI feedback now also fires during **automation playback**. Until now, automations sent OSC but not MIDI : your control surfaces stayed frozen while the automation moved a point. Now the surface follows along in real time. Zone-aware (uses the control zone bounds when the channel has one).",
+        "MIDI mapping editor : numeric fields are now editable directly from the keyboard on desktop (macOS / Windows / Linux). Previously every numeric input (CC number, NRPN, note number, toggle threshold, calibration curve points, range min / max) forced an on-screen numpad modal even when you had a physical keyboard. Now matches the Custom OSC / Custom MIDI editor pattern. Mobile (iPad / iPhone) keeps the numpad modal for touch ergonomics.",
+        "MIDI mapping editor : decimal separator `,` (French / German keyboards) is now accepted in desktop input fields, and the mobile numpad got a `,` button. Range fields also re-clamp automatically when you switch the message type between CC (max 127) and NRPN (max 16383).",
+        "Automation preset modal : the preset shapes (sine, ramp, triangle, square, exponential, s-curve) are now generated **inside the control zone bounds** when the channel has a zone (previously they spanned the full stage and could overflow the zone). Sliders and preview adapt accordingly.",
+        "Automation preset modal : double-tapping a center slider now snaps to the midpoint of the slider range instead of forcing 0, which crashed when the zone excluded the origin (e.g. a zone from x=5 to x=15)."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Les source groups peuvent désormais être **activés / désactivés** depuis la brique Home → réglages du groupe, en sync avec Holophonix Designer. Quand tu désactives un groupe : le point du groupe disparaît du Multi XYZ (les membres restent visibles et draggable individuellement), la rangée bus est masquée du Mixer, le link des paramètres master ↔ membres est coupé — exactement comme dans Designer. Sync bidirectionnelle : un toggle dans Designer reflète l'état instantanément côté HRC et inversement. Le toggle est mappable en MIDI et Stream Deck."
+      ],
+      "fixed": [
+        "Le feedback MIDI au **rappel de cue** respecte désormais les **bornes de la control zone** de chaque channel mappé (avant, le feedback était normalisé sur la stage entière même si le channel était dans une zone — pots et faders se positionnaient au mauvais endroit physique au rappel quand on travaillait dans des zones étroites). Pendant complémentaire au fix 0.7.35 sur l'entrée MIDI dans les zones.",
+        "Le feedback MIDI est désormais envoyé pendant la **lecture des automations**. Jusque-là les automations envoyaient l'OSC mais pas le MIDI : la surface de contrôle restait figée pendant qu'une automation déplaçait un point. Maintenant la surface suit en temps réel. Zone-aware (utilise les bornes de la control zone du channel quand il en a une).",
+        "Éditeur de mapping MIDI : les champs numériques sont désormais éditables au clavier sur desktop (macOS / Windows / Linux). Avant, tous les champs numériques (CC number, NRPN, note number, toggle threshold, points de courbe de calibration, range min / max) forçaient l'ouverture d'un numpad modal même quand tu avais un clavier physique. Le pattern s'aligne sur l'éditeur Custom OSC / Custom MIDI. Le numpad modal reste actif sur mobile (iPad / iPhone) pour l'ergonomie tactile.",
+        "Éditeur de mapping MIDI : la virgule décimale `,` (claviers français / allemand) est désormais acceptée dans les champs desktop, et le numpad mobile a un bouton `,`. Les champs de range se re-clamp aussi automatiquement quand tu bascules le message type entre CC (max 127) et NRPN (max 16383).",
+        "Modal preset des automations : les preset shapes (sinus, ramp, triangle, square, exponentiel, s-curve) sont désormais générés **dans les bornes de la control zone** quand le channel en a une (avant ils prenaient toute la stage et pouvaient sortir de la zone). Les sliders et la preview s'adaptent.",
+        "Modal preset des automations : un double-tap sur un slider de centre snap maintenant au milieu de la range au lieu de forcer 0, ce qui crashait quand la zone excluait l'origine (par exemple une zone qui va de x=5 à x=15)."
+      ]
+    }
+  },
   "0.7.35": {
     "en": {
       "fixed": [
