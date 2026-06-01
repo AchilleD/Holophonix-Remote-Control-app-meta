@@ -1,4 +1,36 @@
 {
+  "0.7.38": {
+    "en": {
+      "added": [
+        "When you connect to a Holophonix processor, the app now asks which way to reconcile shared state: **Pull** (load the processor's control zones, channel colors, venue drawing and source groups into the app), **Push** (send the app's project state to the processor), or **Ignore** (keep both as-is). Loading a project while connected also pushes its shared state to the processor — but only when it actually differs, so an identical reload no longer triggers a redundant prompt."
+      ],
+      "fixed": [
+        "Source group positions stay correct across pull / undo / cue recall / project switch. Fixed several cases where a group could collapse to the origin (0,0,0) or its members could stack on top of each other after the first connection.",
+        "Switching projects no longer leaves stale state behind. Control zones, channel colors, venue drawing and source groups from the previous project are now correctly cleared and replaced instead of leaking into the new one — on both the app and the processor.",
+        "Moving a source group in Multi XYZ now works right after the first connection (the group anchor is correctly picked up from the processor), and the move is properly undoable even if the group was deleted in between.",
+        "Connecting over WebSocket is more resilient on a partial connection — the zones / venue request now retries within bounds instead of hanging."
+      ],
+      "changed": [
+        "Recall Safe : the expand chevron is now separate from the lock toggle. You can open a group to see its channels without changing its Recall Safe state, and vice-versa.",
+        "Under the hood : a large wave of regression tests landed around the reconciliation layer, group positions and project switching, plus a fix for an intermittent test. Steadier behaviour overall."
+      ]
+    },
+    "fr": {
+      "added": [
+        "À la connexion à un processeur Holophonix, l'app demande maintenant dans quel sens réconcilier l'état partagé : **Récupérer** (charger les control zones, couleurs de canal, fond de salle et source groups du processeur dans l'app), **Envoyer** (pousser l'état du projet vers le processeur), ou **Ignorer** (garder les deux tels quels). Charger un projet en étant connecté pousse aussi son état partagé vers le processeur — mais seulement s'il diffère réellement, donc un rechargement identique ne déclenche plus de pop-up inutile."
+      ],
+      "fixed": [
+        "Les positions de source group restent correctes au pull / undo / rappel de cue / changement de projet. Correction de plusieurs cas où un groupe pouvait s'effondrer à l'origine (0,0,0) ou voir ses membres s'empiler après la première connexion.",
+        "Changer de projet ne laisse plus d'état périmé derrière. Control zones, couleurs de canal, fond de salle et source groups du projet précédent sont désormais correctement effacés et remplacés au lieu de fuiter dans le nouveau — côté app comme côté processeur.",
+        "Déplacer un source group en Multi XYZ fonctionne désormais dès la première connexion (l'ancre du groupe est bien reprise du processeur), et le déplacement est correctement annulable même si le groupe a été supprimé entre-temps.",
+        "La connexion WebSocket est plus robuste sur une connexion partielle — la requête zones / salle réessaie dans des bornes au lieu de rester bloquée."
+      ],
+      "changed": [
+        "Recall Safe : le chevron de déroulement est maintenant séparé du toggle de verrouillage. On peut ouvrir un groupe pour voir ses canaux sans changer son état Recall Safe, et inversement.",
+        "Sous le capot : une large vague de tests de régression a atterri autour de la couche de réconciliation, des positions de groupe et du changement de projet, plus la correction d'un test intermittent. Comportement plus stable globalement."
+      ]
+    }
+  },
   "0.7.37": {
     "en": {
       "fixed": [
