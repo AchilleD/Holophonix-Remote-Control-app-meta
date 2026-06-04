@@ -1,4 +1,26 @@
 {
+  "0.8.0": {
+    "en": {
+      "fixed": [
+        "Fixed a crash that could occur when undoing a Recall Safe change after switching tabs (the undo replayed the change against the wrong category). Recall Safe undo/redo is now reliable, and hardened against a rare crash when the screen had just been closed."
+      ],
+      "changed": [
+        "The app has been validated end-to-end on macOS, Windows, Linux and Android (connection, cues, transitions, Show mode). The Web version is no longer targeted for v1.0 — the desktop and mobile apps are the focus.",
+        "Internal app identifier updated ahead of store distribution. One-time effect on an existing install: app-level preferences (theme, connection defaults, recent IPs…) reset to their defaults — your projects, cues and automations stay safe (they live in .hrc files).",
+        "Groundwork for App Store / store distribution is now in place (privacy manifests, code signing, store metadata foundations). No visible change yet."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Correction d'un crash possible lors de l'annulation (undo) d'un changement Recall Safe après un changement d'onglet (l'undo rejouait le changement sur la mauvaise catégorie). L'undo/redo Recall Safe est désormais fiable, et protégé contre un crash rare quand l'écran venait d'être fermé."
+      ],
+      "changed": [
+        "L'app a été validée de bout en bout sur macOS, Windows, Linux et Android (connexion, cues, transitions, mode Show). La version Web n'est plus visée pour la v1.0 — les apps desktop et mobile sont la priorité.",
+        "Identifiant interne de l'app mis à jour avant la distribution sur les stores. Effet ponctuel sur une installation existante : les préférences globales (thème, réglages de connexion, IPs récentes…) reviennent à leurs valeurs par défaut — vos projets, cues et automations restent intacts (ils sont dans des fichiers .hrc).",
+        "Fondations pour la distribution App Store / stores désormais en place (manifests de confidentialité, signature de code, métadonnées store). Pas de changement visible pour l'instant."
+      ]
+    }
+  },
   "0.7.38": {
     "en": {
       "added": [
