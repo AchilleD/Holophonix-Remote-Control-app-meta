@@ -1,8 +1,8 @@
 {
-  "latest": "0.8.0-beta",
+  "latest": "0.8.1-beta",
   "minSupported": "0.7.0-beta",
   "channels": {
-    "beta": "0.8.0-beta"
+    "beta": "0.8.1-beta"
   },
   "stores": {
     "macos": "TBD",
@@ -11,5 +11,5 @@
     "android": "TBD",
     "linux": "TBD"
   },
-  "releaseDate": "2026-06-04"
+  "releaseDate": "2026-06-05"
 }

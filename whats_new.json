@@ -1,4 +1,22 @@
 {
+  "0.8.1": {
+    "en": {
+      "added": [
+        "iOS and iPadOS builds are now distributed through TestFlight — the beta is installable on iPhone and iPad. (Internal testers get builds as soon as they finish processing, no review wait.)"
+      ],
+      "changed": [
+        "The macOS app is now signed (Developer ID) and notarized by Apple — it opens without the \"unidentified developer\" warning. The standard \"downloaded from the Internet, open?\" confirmation appears once on first launch, like any downloaded app, then never again."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Les builds iOS et iPadOS sont désormais distribués via TestFlight — la beta est installable sur iPhone et iPad. (Les testeurs internes reçoivent les builds dès la fin du traitement, sans attente de review.)"
+      ],
+      "changed": [
+        "L'app macOS est maintenant signée (Developer ID) et notarisée par Apple — elle s'ouvre sans l'avertissement « développeur non identifié ». La confirmation standard « app téléchargée d'Internet, ouvrir ? » apparaît une fois à la première ouverture, comme toute app téléchargée, puis plus jamais."
+      ]
+    }
+  },
   "0.8.0": {
     "en": {
       "fixed": [
