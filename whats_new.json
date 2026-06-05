@@ -1,4 +1,40 @@
 {
+  "0.8.4": {
+    "en": {
+      "added": [
+        "iOS and iPadOS are now available on TestFlight — install the iPhone / iPad beta. (Internal testers get builds as soon as they finish processing, no review wait.)"
+      ]
+    },
+    "fr": {
+      "added": [
+        "iOS et iPadOS sont désormais disponibles sur TestFlight — installez la beta iPhone / iPad. (Les testeurs internes reçoivent les builds dès la fin du traitement, sans attente de review.)"
+      ]
+    }
+  },
+  "0.8.3": {
+    "en": {
+      "changed": [
+        "Internal release-pipeline work toward iOS / iPadOS TestFlight distribution. No user-facing change on this version."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Travaux internes sur le pipeline de release pour la distribution iOS / iPadOS via TestFlight. Aucun changement visible sur cette version."
+      ]
+    }
+  },
+  "0.8.2": {
+    "en": {
+      "changed": [
+        "Internal release-pipeline work toward iOS / iPadOS TestFlight distribution. No user-facing change on this version."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Travaux internes sur le pipeline de release pour la distribution iOS / iPadOS via TestFlight. Aucun changement visible sur cette version."
+      ]
+    }
+  },
   "0.8.1": {
     "en": {
       "added": [
