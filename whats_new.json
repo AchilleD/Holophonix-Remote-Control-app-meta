@@ -1,4 +1,28 @@
 {
+  "0.8.5": {
+    "en": {
+      "fixed": [
+        "macOS: the Stream Deck now works out of the box — the required library is bundled with the app, so you no longer need to install anything manually.",
+        "iPad: the connection screen now validates the IP address correctly — the Connect button enables as soon as a valid IP is entered, and an empty or malformed IP shows the \"IP required\" hint (matching macOS).",
+        "iPad: in Show mode, the Control Zone \"Patch\" button is now hidden (like \"Add zone\"), keeping the live show locked down.",
+        "iPad: the Home \"Files\" section no longer overflows — it now lays out as a 2×2 grid."
+      ],
+      "changed": [
+        "iOS is now iPad-only. The app is built for the iPad (and desktop) — its dense, landscape control surface is not suited to the iPhone, which is no longer supported on iOS."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "macOS : le Stream Deck fonctionne désormais sans rien installer — la bibliothèque requise est embarquée dans l'app.",
+        "iPad : l'écran de connexion valide correctement l'adresse IP — le bouton Connecter s'active dès qu'une IP valide est saisie, et une IP vide ou incorrecte affiche « IP required » (parité avec macOS).",
+        "iPad : en mode Show, le bouton « Patch » des Control Zones est maintenant masqué (comme « Add zone »), pour garder le spectacle verrouillé.",
+        "iPad : la section « Files » de l'accueil ne déborde plus — elle s'affiche en grille 2×2."
+      ],
+      "changed": [
+        "iOS est désormais réservé à l'iPad. L'app est pensée pour l'iPad (et le desktop) — sa surface de contrôle dense en paysage n'est pas adaptée à l'iPhone, qui n'est plus supporté sur iOS."
+      ]
+    }
+  },
   "0.8.4": {
     "en": {
       "added": [

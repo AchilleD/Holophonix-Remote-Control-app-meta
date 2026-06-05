@@ -1,8 +1,8 @@
 {
-  "latest": "0.8.4-beta",
+  "latest": "0.8.5-beta",
   "minSupported": "0.7.0-beta",
   "channels": {
-    "beta": "0.8.4-beta"
+    "beta": "0.8.5-beta"
   },
   "stores": {
     "macos": "TBD",
