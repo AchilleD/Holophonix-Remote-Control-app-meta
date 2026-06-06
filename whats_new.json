@@ -1,4 +1,16 @@
 {
+  "0.8.6": {
+    "en": {
+      "changed": [
+        "Internal release-pipeline work toward Microsoft Store (Windows) distribution. No user-facing change on this version."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Travaux internes sur le pipeline de release pour la distribution Microsoft Store (Windows). Aucun changement visible sur cette version."
+      ]
+    }
+  },
   "0.8.5": {
     "en": {
       "fixed": [
