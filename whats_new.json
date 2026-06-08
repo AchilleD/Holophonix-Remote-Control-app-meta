@@ -1,4 +1,16 @@
 {
+  "0.8.7": {
+    "en": {
+      "changed": [
+        "Internal release-pipeline work toward Google Play (Android) distribution. No user-facing change on this version."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Travaux internes sur le pipeline de release pour la distribution Google Play (Android). Aucun changement visible sur cette version."
+      ]
+    }
+  },
   "0.8.6": {
     "en": {
       "changed": [
