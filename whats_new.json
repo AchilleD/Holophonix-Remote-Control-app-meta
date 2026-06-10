@@ -1,4 +1,20 @@
 {
+  "0.8.8": {
+    "en": {
+      "fixed": [
+        "Multi XYZ: the background floor plan now stays correctly aligned with source and control-zone positions. (Previously the plan could appear shifted or mis-scaled after connecting or switching projects.)",
+        "Backup processor: failover to the backup Holophonix now works reliably — switching no longer fails silently.",
+        "Continuous recording: when you record a sequence of movements, the timing between them is now preserved on save, so recalling the sequence (via a cue) reproduces it faithfully."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Multi XYZ : le plan de fond reste désormais correctement aligné avec les positions des sources et des control zones. (Auparavant, le plan pouvait apparaître décalé ou mal redimensionné après une connexion ou un changement de projet.)",
+        "Processeur de secours : le basculement vers le Holophonix de backup fonctionne maintenant de façon fiable — le switch n'échoue plus silencieusement.",
+        "Enregistrement continu : lorsque vous enregistrez une séquence de mouvements, le timing entre eux est désormais préservé à la sauvegarde, pour qu'un rappel de la séquence (via un cue) la reproduise fidèlement."
+      ]
+    }
+  },
   "0.8.7": {
     "en": {
       "changed": [
