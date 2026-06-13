@@ -1,4 +1,34 @@
 {
+  "0.8.9": {
+    "en": {
+      "added": [
+        "New channel icons: a real violin and trumpet (and the other Holophonix 3D-model icons) now use clear, recognizable symbols."
+      ],
+      "fixed": [
+        "Client mode: the Holophonix status now shows correctly as soon as you connect — no more false \"Offline\" for a few seconds.",
+        "Channel icons now stay in sync between the server and connected clients (all icons, both directions).",
+        "Multi XYZ: resetting a background dimension (double-click) or typing a value now offers to rescale, like dragging the slider already did.",
+        "Multi XYZ: the line linking grouped sources keeps a constant thickness when you zoom."
+      ],
+      "changed": [
+        "Reliability & performance hardening across backup failover, cue GO, multi-touch dragging and the Stream Deck (pre-1.0 audit pass)."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Nouvelles icônes de canal : un vrai violon et une vraie trompette (et les autres icônes des modèles 3D Holophonix) utilisent désormais des symboles clairs et reconnaissables."
+      ],
+      "fixed": [
+        "Mode client : le statut Holophonix s'affiche correctement dès la connexion — fini le faux « Offline » pendant quelques secondes.",
+        "Les icônes de canal restent synchronisées entre le serveur et les clients connectés (toutes les icônes, dans les deux sens).",
+        "Multi XYZ : réinitialiser une dimension du fond (double-clic) ou saisir une valeur propose maintenant le rescale, comme le faisait déjà le slider.",
+        "Multi XYZ : la ligne reliant les sources d'un groupe garde une épaisseur constante au zoom."
+      ],
+      "changed": [
+        "Durcissement fiabilité & performance sur le failover de secours, le GO de cue, le drag multi-touch et le Stream Deck (passe d'audit pré-1.0)."
+      ]
+    }
+  },
   "0.8.8": {
     "en": {
       "fixed": [
