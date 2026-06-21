@@ -1,4 +1,16 @@
 {
+  "0.9.1": {
+    "en": {
+      "changed": [
+        "Maintenance release: behind-the-scenes fixes for app-store delivery (iOS/macOS privacy declarations). No functional changes since 0.9.0."
+      ]
+    },
+    "fr": {
+      "changed": [
+        "Version de maintenance : corrections en coulisses pour la distribution sur les stores (déclarations de confidentialité iOS/macOS). Aucun changement fonctionnel depuis 0.9.0."
+      ]
+    }
+  },
   "0.9.0": {
     "en": {
       "added": [
