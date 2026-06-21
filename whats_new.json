@@ -1,8 +1,49 @@
 {
+  "0.9.0": {
+    "en": {
+      "added": [
+        "EQ: much clearer band selection — a dedicated colour per band, a crosshair on the selected point, marked knobs, and a persistent tooltip with frequency/gain locks.",
+        "Mixer: a selection tint, white knob and name values, and colour-coded labels.",
+        "Home dashboard: larger, harmonised typography and denser 2x2 tiles, plus new Connection and Transport tiles (experimental).",
+        "Send bug reports directly from the app — no email client needed.",
+        "Help → Documentation now opens the documentation site.",
+        "The colour picker now opens in its own native window (desktop)."
+      ],
+      "changed": [
+        "Settings: clearer \"Channel Customization\" wording and a rebalanced layout.",
+        "Show mode: the Undo, Redo and History buttons are now hidden to prevent accidental edits.",
+        "Behind the scenes: permission cleanup (Android/iOS), persistence file versioning, and network reliability hardening ahead of the public release."
+      ],
+      "fixed": [
+        "iPad: display adjustments on Home and Settings, and the on-screen keyboard no longer resizes the Home screen.",
+        "Multi XYZ: the layout preview now matches the real Z/Width knob style."
+      ]
+    },
+    "fr": {
+      "added": [
+        "EQ : sélection de bande bien plus lisible — couleur dédiée par bande, croix de visée sur le point sélectionné, knobs marqués, et tooltip persistant avec verrous fréquence/gain.",
+        "Mixer : teinte de sélection, valeurs de knob et de nom en blanc, et étiquettes en code couleur.",
+        "Accueil : typographie agrandie et harmonisée, tuiles 2x2 plus denses, et nouvelles tuiles Connexion et Transport (expérimental).",
+        "Envoi du rapport de bug directement depuis l'app — sans client mail.",
+        "Aide → Documentation ouvre désormais le site de documentation.",
+        "Le sélecteur de couleur s'ouvre dans sa propre fenêtre native (desktop)."
+      ],
+      "changed": [
+        "Réglages : libellé « Personnalisation des canaux » plus clair et mise en page rééquilibrée.",
+        "Mode Show : les boutons Annuler, Rétablir et Historique sont masqués pour éviter les éditions accidentelles.",
+        "En coulisses : nettoyage des permissions (Android/iOS), versionnage des fichiers de persistance, et durcissement réseau avant le lancement public."
+      ],
+      "fixed": [
+        "iPad : ajustements d'affichage sur l'Accueil et les Réglages, et le clavier à l'écran ne redimensionne plus l'Accueil.",
+        "Multi XYZ : l'aperçu de disposition reflète le vrai style des knobs Z/Largeur."
+      ]
+    }
+  },
   "0.8.9": {
     "en": {
       "added": [
-        "New channel icons: a real violin and trumpet (and the other Holophonix 3D-model icons) now use clear, recognizable symbols."
+        "New channel icons: a real violin and trumpet (and the other Holophonix 3D-model icons) now use clear, recognizable symbols.",
+        "Privacy Policy and Terms of Service now open inside the app — readable offline in the venue, with a \"View online\" link when you have a connection."
       ],
       "fixed": [
         "Client mode: the Holophonix status now shows correctly as soon as you connect — no more false \"Offline\" for a few seconds.",
@@ -16,7 +57,8 @@
     },
     "fr": {
       "added": [
-        "Nouvelles icônes de canal : un vrai violon et une vraie trompette (et les autres icônes des modèles 3D Holophonix) utilisent désormais des symboles clairs et reconnaissables."
+        "Nouvelles icônes de canal : un vrai violon et une vraie trompette (et les autres icônes des modèles 3D Holophonix) utilisent désormais des symboles clairs et reconnaissables.",
+        "La Politique de confidentialité et les Conditions d'utilisation s'ouvrent désormais dans l'app — consultables hors ligne en régie, avec un lien « Voir en ligne » quand vous avez une connexion."
       ],
       "fixed": [
         "Mode client : le statut Holophonix s'affiche correctement dès la connexion — fini le faux « Offline » pendant quelques secondes.",
