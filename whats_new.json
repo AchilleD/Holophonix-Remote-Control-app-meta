@@ -1,4 +1,40 @@
 {
+  "0.9.2": {
+    "en": {
+      "added": [
+        "Show mode can now be desynchronised: each device manages its own Edit/Show mode independently. A server option (Connection page) re-syncs all clients when needed. Desynchronised by default.",
+        "VU meter: a pre/post fader toggle for buses and outputs (inputs stay pre-fader)."
+      ],
+      "changed": [
+        "Visual refresh (Design System): unified colours and typography, consistent screen headers and sections, harmonised modals.",
+        "Accessibility: higher contrast on disabled states (dark theme), larger touch targets on iPad, spacing and radii aligned to a grid."
+      ],
+      "fixed": [
+        "Channel icon sync on connect: a client joining mid-session now gets the icons already set.",
+        "Server auto-discovery: periodic mDNS re-announce — the server no longer disappears from the list after a while.",
+        "Native Dynamics window: corrected height (no more clipped content) and the gain-reduction (compression) curve now shows.",
+        "Calibrate from scale: the two scale handles now have a fixed on-screen size, grabbable at any zoom level.",
+        "Android: the Home Files tile is now scrollable on small screens, and the About modal Close button stays reachable."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Mode Show désynchronisable : chaque poste gère son mode Édition/Show indépendamment. Une option serveur (page connexion) re-synchronise tous les clients si besoin. Désynchronisé par défaut.",
+        "VU meter : un toggle pre/post fader pour les bus et sorties (les entrées restent pre-fader)."
+      ],
+      "changed": [
+        "Refonte visuelle (Design System) : couleurs et typographie unifiées, en-têtes d'écran et sections cohérents, modals harmonisés.",
+        "Accessibilité : contraste relevé sur les états désactivés (thème sombre), cibles tactiles agrandies sur iPad, espacements et rayons alignés sur une grille."
+      ],
+      "fixed": [
+        "Synchro des icônes de canaux à la connexion : un client qui rejoint en cours de route récupère les icônes déjà posées.",
+        "Découverte automatique du serveur : ré-annonce mDNS périodique — le serveur ne disparaît plus de la liste après un certain temps.",
+        "Fenêtre native Dynamics : hauteur corrigée (plus de contenu coupé) et la courbe de compression (gain reduction) s'affiche désormais.",
+        "Calibrate from scale : les deux poignées d'échelle ont une taille fixe à l'écran, attrapables à tout niveau de zoom.",
+        "Android : la brique Files de l'accueil est scrollable sur petit écran, et le bouton Fermer du modal À propos reste accessible."
+      ]
+    }
+  },
   "0.9.1": {
     "en": {
       "changed": [
