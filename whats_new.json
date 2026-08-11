@@ -1,4 +1,50 @@
 {
+  "0.9.3": {
+    "en": {
+      "added": [
+        "Automations: six offset/scale rotaries (X/Y/Z) to reposition a path by hand.",
+        "Holophonix version read via the new 2.4.1 endpoint (falls back on older firmware).",
+        "Save As: duplicate the current project under a new name — keep several versions (e.g. one per venue) and switch between them.",
+        "Automations: open the editor from the grid view; its preview now shows the stage background.",
+        "Source groups: a redesigned editor to choose which parameters the group controls (position, gain, mute, solo, monitoring), toggle its visibility on the Multi XYZ pad, and switch it active.",
+        "Adopting a Holophonix project now lists which control zones will move or resize."
+      ],
+      "fixed": [
+        "Projects: no more cross-project cue overwrite — the in-app list now mirrors the projects folder on disk.",
+        "Loading a project: the app asks which way to sync and no longer silently overwrites the Holophonix processor.",
+        "Recall safe is now saved per project.",
+        "Cues and automations inside a control zone now follow the zone geometry — including when a project is loaded on the Holophonix.",
+        "Cue navigation no longer loops back to the first cue past the last one.",
+        "Server mode: the connection window stays open until the server is started.",
+        "Keyboard: Space and Enter reliably fire the selected cue — keys no longer trigger the wrong button.",
+        "Automations: flatten now asks for confirmation before clearing a path.",
+        "Cues no longer overwrite the recall-safe positions of grouped sources on recall.",
+        "Source group parameters (mute, gain, solo, active, monitoring) changed on the Holophonix now reach connected clients."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Automations : six rotatifs offset/scale (X/Y/Z) pour recaler un tracé à la main.",
+        "Version Holophonix lue via le nouvel endpoint 2.4.1 (fallback sur les firmwares plus anciens).",
+        "Enregistrer sous : dupliquer le projet courant sous un nouveau nom — garder plusieurs versions (ex. une par salle) et basculer de l'une à l'autre.",
+        "Automations : ouvrir l'éditeur depuis la grille ; son aperçu affiche désormais le fond de scène.",
+        "Source groups : un éditeur repensé pour choisir les paramètres propagés par le groupe (position, gain, mute, solo, monitoring), afficher/masquer son point sur le pad Multi XYZ, et le rendre actif.",
+        "L'adoption d'un projet Holophonix liste désormais les control zones qui vont être déplacées ou redimensionnées."
+      ],
+      "fixed": [
+        "Projets : plus d'écrasement de cues entre projets — la liste in-app reflète le dossier projects sur le disque.",
+        "Chargement d'un projet : l'app demande le sens de synchronisation et n'écrase plus le processeur Holophonix en silence.",
+        "Recall safe désormais sauvegardé par projet.",
+        "Cues et automations dans une control zone : suivent la géométrie de la zone — y compris au chargement d'un projet dans le Holophonix.",
+        "Navigation des cues : plus de retour à la première cue après la dernière.",
+        "Mode server : la fenêtre de connexion reste ouverte jusqu'au lancement du serveur.",
+        "Clavier : Espace et Entrée déclenchent de façon fiable la cue sélectionnée — les touches ne déclenchent plus le mauvais bouton.",
+        "Automations : le flatten demande désormais confirmation avant d'effacer un tracé.",
+        "Cues : plus d'écrasement des positions recall-safe des sources groupées au rappel.",
+        "Paramètres de source group (mute, gain, solo, actif, monitoring) modifiés sur le Holophonix : ils atteignent désormais les clients connectés."
+      ]
+    }
+  },
   "0.9.2": {
     "en": {
       "added": [
