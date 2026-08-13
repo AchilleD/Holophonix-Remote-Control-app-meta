@@ -1,4 +1,22 @@
 {
+  "0.9.4": {
+    "en": {
+      "added": [
+        "macOS App Store: your projects are now stored in a visible Documents folder — pick it from the banner on the connection screen, and change it anytime in Settings."
+      ],
+      "fixed": [
+        "Check for Update: the release notes now appear in the dialog instead of \"See release notes for details\"."
+      ]
+    },
+    "fr": {
+      "added": [
+        "macOS App Store : vos projets sont désormais dans un dossier Documents visible — à choisir via la bannière de l'écran de connexion, et modifiable à tout moment dans les Réglages."
+      ],
+      "fixed": [
+        "Check for Update : le détail de la version s'affiche désormais dans la fenêtre, au lieu de « Voir les notes de version pour les détails »."
+      ]
+    }
+  },
   "0.9.3": {
     "en": {
       "added": [
