@@ -1,4 +1,34 @@
 {
+  "0.9.5": {
+    "en": {
+      "added": [
+        "Compare cues side by side or against the live scene — pick and add sources (up to 4) right in the window, and filter parameters with a search field."
+      ],
+      "changed": [
+        "Bypassing an EQ or Compressor now keeps its current curve visible (dimmed) instead of resetting to a flat/default view."
+      ],
+      "fixed": [
+        "Client instances with edit rights can now edit the mixer modals (EQ, Compressor, Reverb, Sends) — they were read-only.",
+        "MIDI controllers reconnect reliably when reopening a project, and Custom MIDI / MIDI actions re-bind to the device automatically.",
+        "Adopting the processor now retrieves its background image instead of keeping a previous project's.",
+        "Adding several channels at once lays them out in a line (with spacing) instead of stacking them in one spot."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Comparez des cues entre eux ou avec la scène live — choisissez et ajoutez les sources (jusqu'à 4) directement dans la fenêtre, et filtrez les paramètres avec un champ de recherche."
+      ],
+      "changed": [
+        "Le bypass d'un EQ ou d'un compresseur conserve désormais sa courbe à l'écran (atténuée) au lieu de revenir à un état plat par défaut."
+      ],
+      "fixed": [
+        "Les instances Client avec droits d'édition peuvent maintenant éditer les modals du mixer (EQ, Compresseur, Reverb, Sends) — auparavant en lecture seule.",
+        "Les contrôleurs MIDI se reconnectent de façon fiable à la réouverture d'un projet, et les actions Custom MIDI / MIDI se ré-associent automatiquement.",
+        "L'adopt processor récupère bien l'image de fond du processeur au lieu de garder celle d'un ancien projet.",
+        "L'ajout simultané de plusieurs canaux les dispose en ligne (avec intervalle) au lieu de les empiler."
+      ]
+    }
+  },
   "0.9.4": {
     "en": {
       "added": [
