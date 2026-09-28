@@ -1,4 +1,16 @@
 {
+  "0.9.6": {
+    "en": {
+      "fixed": [
+        "Custom OSC: sending is now reliable — a send to an unreachable target no longer silently blocks all Custom OSC output (localhost included) until an app restart; the socket recreates itself and retries."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Custom OSC : l'envoi est fiabilisé — un envoi vers une cible injoignable ne bloque plus silencieusement tous les envois Custom OSC (127.0.0.1 compris) jusqu'à un redémarrage ; le socket se recrée et réessaie tout seul."
+      ]
+    }
+  },
   "0.9.5": {
     "en": {
       "added": [
