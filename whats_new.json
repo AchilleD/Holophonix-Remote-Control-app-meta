@@ -1,4 +1,50 @@
 {
+  "0.9.7": {
+    "en": {
+      "added": [
+        "Automations: the Apply Preset window now shows a live preview of the curve, updated as you change the values.",
+        "Random automations: choose to replay the same path or regenerate a new one each loop, and to follow the curve or jump from point to point.",
+        "Cues: a \"Stop all automations\" option, plus a per-link restart/continue mode for linked automations.",
+        "Automation speed now ranges from 10% to 1000%, with a smoother (logarithmic) rotary response.",
+        "A single MIDI control (CC, note, pitch bend, program change) can now drive several mappings at once.",
+        "macOS: native notifications and a Dock bounce on critical connection events (loss, failover) when the app is in the background — the Dock stops bouncing once the connection returns."
+      ],
+      "changed": [
+        "macOS downloads are now a .dmg (drag-to-install) instead of a .zip.",
+        "In Server/Client mode, Custom OSC and Custom MIDI are now emitted by the server, so every remote triggers the same output (targets must be reachable from the server)."
+      ],
+      "fixed": [
+        "Clients now receive the full project — automations, cue links, and more — when the server loads or switches a project; a client connected beforehand is updated like a freshly connected one.",
+        "A looping automation launched by a cue no longer runs forever.",
+        "Clients can edit Custom OSC buttons again (changes are applied by the server and shared with all clients).",
+        "MIDI: known devices reconnect automatically when plugged back in, and you are notified on connect / disconnect.",
+        "Automations: the transport buttons (play/pause, stop) are now MIDI-learnable from the grid view too.",
+        "Deleting a Custom MIDI or Custom OSC action now also removes its MIDI mappings and Stream Deck buttons."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Automations : la fenêtre « Appliquer un preset » affiche désormais un aperçu live de la courbe, mis à jour quand vous changez les valeurs.",
+        "Automations aléatoires : choisissez de rejouer le même chemin ou d'en regénérer un à chaque boucle, et de suivre la courbe ou de sauter de point en point.",
+        "Cues : une option « Arrêter toutes les automations », et un mode redémarrer/continuer par lien pour les automations liées.",
+        "La vitesse des automations va désormais de 10 % à 1000 %, avec une réponse du rotatif plus progressive (logarithmique).",
+        "Un même contrôle MIDI (CC, note, pitch bend, program change) peut maintenant piloter plusieurs mappings à la fois.",
+        "macOS : notifications natives et rebond de l'icône du Dock sur les événements de connexion critiques (perte, bascule) quand l'app est en arrière-plan — le rebond s'arrête au retour de la connexion."
+      ],
+      "changed": [
+        "Les téléchargements macOS sont désormais un .dmg (glisser-déposer vers Applications) au lieu d'un .zip.",
+        "En mode Serveur/Client, le Custom OSC et le Custom MIDI sont désormais émis par le serveur, pour que chaque remote déclenche la même sortie (les cibles doivent être joignables depuis le serveur)."
+      ],
+      "fixed": [
+        "Les clients reçoivent désormais tout le projet — automations, liens de cue, etc. — quand le serveur charge ou change de projet ; un client déjà connecté est mis à jour comme un client qui vient de se connecter.",
+        "Une automation en boucle lancée par une cue ne tourne plus indéfiniment.",
+        "Les clients peuvent de nouveau éditer les boutons Custom OSC (les modifications sont appliquées par le serveur et partagées avec tous les clients).",
+        "MIDI : les appareils connus se reconnectent automatiquement au rebranchement, et vous êtes notifié à la connexion / déconnexion.",
+        "Automations : les boutons de transport (play/pause, stop) sont maintenant mappables en MIDI depuis la vue grille aussi.",
+        "Supprimer une action Custom MIDI ou Custom OSC retire désormais aussi ses mappings MIDI et ses boutons Stream Deck."
+      ]
+    }
+  },
   "0.9.6": {
     "en": {
       "fixed": [
