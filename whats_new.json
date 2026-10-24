@@ -1,4 +1,16 @@
 {
+  "0.9.8": {
+    "en": {
+      "fixed": [
+        "Android: the app installs on compatible tablets from Google Play again — a device-filtering issue had hidden it from every device."
+      ]
+    },
+    "fr": {
+      "fixed": [
+        "Android : l'application s'installe de nouveau sur les tablettes compatibles depuis le Google Play — un filtre d'appareils la masquait de tous les appareils."
+      ]
+    }
+  },
   "0.9.7": {
     "en": {
       "added": [
