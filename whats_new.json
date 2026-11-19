@@ -1,4 +1,48 @@
 {
+  "0.9.9": {
+    "en": {
+      "added": [
+        "Ambisonic sources (A-Format, B-Format, HOA Stream, EigenMike, Zylia): create them, rotate them (Yaw / Pitch / Roll) in the mixer, and use the rotation in cues, automations, MIDI and Stream Deck.",
+        "A single Add Source window for every source type, with line / arc / sphere layouts and a 3D preview.",
+        "Desktop: almost every dialog can now open in its own native window, which reopens where you left it (Settings → Windows).",
+        "Projects: a project from a newer version or a damaged one is never opened nor overwritten — a window offers to update, restore the backup or open another project.",
+        "Mixer: LFE Solo, and a condensed VU with clip light for multi-input channels."
+      ],
+      "changed": [
+        "A new project starts without MIDI mappings, Custom actions or Stream Deck profiles — each project keeps its own.",
+        "Show mode: Settings are no longer reachable, Home no longer shifts when switching to Show, and the reconcile window is offered on reconnection.",
+        "MIDI learn: the parameter waiting for MIDI is outlined in orange; leaving map mode clears everything.",
+        "Minimum versions: iOS 15 and macOS 12."
+      ],
+      "fixed": [
+        "Windows: full screen fits the screen at any display scaling.",
+        "Recalling a cue with \"Stop all automations\" now restores its positions reliably.",
+        "New and library preset Save no longer overwrite an existing file of the same name; a file emptied by a power cut no longer replaces its backup (Restore is offered).",
+        "Recordings in progress are kept when switching to Show mode."
+      ]
+    },
+    "fr": {
+      "added": [
+        "Sources Ambisonic (A-Format, B-Format, HOA Stream, EigenMike, Zylia) : créez-les, faites-les tourner (Yaw / Pitch / Roll) dans le mixer, et utilisez la rotation dans les cues, les automations, le MIDI et le Stream Deck.",
+        "Une seule fenêtre « Ajouter des sources » pour tous les types, avec placement en ligne / arc / sphère et aperçu 3D.",
+        "Desktop : presque toutes les fenêtres peuvent s'ouvrir en fenêtre native, qui se rouvre là où vous l'avez laissée (Paramètres → Fenêtres).",
+        "Projets : un projet d'une version plus récente ou endommagé n'est jamais ouvert ni écrasé — une fenêtre propose de mettre à jour, de restaurer la sauvegarde ou d'ouvrir un autre projet.",
+        "Mixer : Solo du LFE, et VU condensé avec voyant de clip pour les canaux multi-entrées."
+      ],
+      "changed": [
+        "Un nouveau projet démarre sans mappings MIDI, actions Custom ni profils Stream Deck — chaque projet garde les siens.",
+        "Mode Show : les Paramètres ne sont plus accessibles, la Home ne se décale plus au passage en Show, et la fenêtre de réconciliation est proposée à la reconnexion.",
+        "MIDI learn : le paramètre en attente est entouré d'orange ; quitter le mode map éteint tout.",
+        "Versions minimales : iOS 15 et macOS 12."
+      ],
+      "fixed": [
+        "Windows : le plein écran tient dans l'écran à toute mise à l'échelle.",
+        "Rappeler une cue avec « Arrêter toutes les automations » restitue désormais ses positions de façon fiable.",
+        "New et l'enregistrement d'un preset de bibliothèque n'écrasent plus un fichier du même nom ; un fichier vidé par une coupure ne remplace plus sa sauvegarde (Restaurer est proposé).",
+        "Un enregistrement en cours est conservé au passage en mode Show."
+      ]
+    }
+  },
   "0.9.8": {
     "en": {
       "fixed": [
